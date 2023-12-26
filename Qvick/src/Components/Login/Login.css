@@ -1,42 +1,71 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-.BackGround {
-    background-color: #000120;
+.LoginPage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    position: fixed;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-}
-.Login_Box {
-    position: relative;
-    background-color: aliceblue;
-    width: 500px;
-    height: 500px;
-    border-radius: 15px;
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-.Login_Title {
-    position: relative;
-    margin-left: 50px;
-}
-.Id_Box {
-    margin-top: 50px;
-    position: relative;
+    max-width: 500px;
+    padding: 0 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #f7f7f7;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+.LoginTitle {
+    margin-top: 87px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #262626;
+}
+.ContentWrap {
+    margin-top: 26px;
+    flex: 0;
+}
+.InputTitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #262626;
+}
+.InputWrap {
+    display: flex;
     border-radius: 15px;
+    padding: 16px;
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #e2e0e0;
 }
-.PS_Box {
-    margin-top: 70px;
+.InputWrap:focus-within {
+    border: 1px solid #868afc;
 }
-.Login_Button {
-    margin-top: 100px;
+.Input {
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 17px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.Input::placeholder {
+    color: #dadada;
+}
+.ErrorMessage {
+    margin-top: 8px;
+    color: #ef0000;
+    font-size: 12px;
+}
+.LoginButton {
+    width: 100%;
+    height: 48px;
+    border: none;
+    font-weight: 700;
+    background-color: #000120;
+    border-radius: 64px;
+    color: white;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+.LoginButton:disabled{
+    background-color: #dadada;
+    color: white;
 }
