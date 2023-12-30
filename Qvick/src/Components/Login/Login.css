@@ -1,65 +1,87 @@
+.AllPage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #252931;
+}
 .LoginPage {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     padding: 0 20px;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: #f7f7f7;
+    background-color: #252931;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 .LoginTitle {
-    margin-top: 87px;
-    font-size: 26px;
+    margin-top: 97px;
+    font-size: 96px;
     font-weight: 700;
-    color: #262626;
+    color: #FFFFFF;
+    text-align: center;
 }
 .ContentWrap {
     margin-top: 26px;
     flex: 0;
 }
-.InputTitle {
-    font-size: 12px;
-    font-weight: 600;
-    color: #262626;
-}
-.InputWrap {
+.LoginInputWrap {
     display: flex;
-    border-radius: 15px;
+    border-radius: 5px;
+    padding: 16px;
+    margin-top: 68px;
+    margin-bottom: 58px;
+    background-color: #3A3F4A;
+    border: 1px solid #3A3F4A;
+    width: 800px;
+    height: 35px;
+    filter: drop-shadow(25px 7px 5px #000000);
+    align-items: center;
+}
+.PwInputWrap {
+    display: flex;
+    border-radius: 5px;
     padding: 16px;
     margin-top: 8px;
-    background-color: white;
-    border: 1px solid #e2e0e0;
+    background-color: #3A3F4A;
+    border: 1px solid #3A3F4A;
+    width: 800px;
+    height: 35px;
+    filter: drop-shadow(25px 7px 5px #000000); 
+    align-items: center;
 }
 .InputWrap:focus-within {
     border: 1px solid #868afc;
 }
 .Input {
-    width: 100%;
+    width: 865px;
     outline: none;
     border: none;
-    height: 17px;
+    height: 37px;
     font-size: 14px;
     font-weight: 400;
+    border-color: #3A3F4A;
+    background-color: #3A3F4A;
+    color: #FFFFFF;
 }
 .Input::placeholder {
-    color: #dadada;
+    font-size: 20px;
+    color: #787878;
+    background-color: #3A3F4A;
 }
-.ErrorMessageWrap {
-    margin-top: 8px;
-    color: #ef0000;
-    font-size: 12px;
+.Input:focus::placeholder {
+    background-color: #3A3F4A;
 }
 .LoginButton {
     width: 100%;
     height: 48px;
     border: none;
     font-weight: 700;
-    background-color: #000120;
+    background-color: #58B7D3;
     border-radius: 64px;
     color: white;
     margin-bottom: 16px;

@@ -55,53 +55,38 @@ export default function Login() {
     },[emailValid,pwValid]) // 이 두개의 설정 값의 변화가 일어날때 마다 버튼활성화 여부 체크
 
     return (
-        <div className="LoginPage">
-            <div className="LoginTitle">
-                이메일과 비밀번호를 
-                <br/>
-                입력해주세요
-            </div>
-            <div className="ContentWrap">
-                <div className="InputTitle">이메일 주소</div>
-                <div className="InputWrap">
-                    <input 
-                        type="text"
-                        className="Input"
-                        placeholder="test@example.com"
-                        value={email}
-                        onChange={HandleEmail}
-                        />
+        <div className="AllPage">
+            <div className="LoginPage">
+                <div className="LoginTitle">
+                    Qvick
                 </div>
-                <div className="ErrorMessageWrap">
-                    {
-                        !emailValid && email.length > 0 && ( // 이메일칸에 적힌 글자수가 0 보다 커지면 출력(올바른 이메일이 확인되면 삭제)
-                            <div>올바른 이메일을 입력해주세요.</div>
-                        )
-                    }
+                <div className="ContentWrap">
+                    <div className="LoginInputWrap">
+                        <input 
+                            type="text"
+                            className="Input"
+                            placeholder="이메일을 입력해주세요."
+                            value={email}
+                            onChange={HandleEmail}
+                            />
+                    </div>
+                    <div className="PwInputWrap">
+                        <input 
+                            type="password"
+                            className="Input"
+                            placeholder="영문, 숫자, 특수문자 포함 비밀번호를 입력해주세요."
+                            value={pw}
+                            onChange={HandlePassWord}
+                            />
+                    </div>
                 </div>
-                <div className="InputTitle">비밀번호</div>
-                <div className="InputWrap">
-                    <input 
-                        type="password"
-                        className="Input"
-                        placeholder="영문, 숫자, 특수문자 포함 8자이상을 입력해주세요."
-                        value={pw}
-                        onChange={HandlePassWord}
-                        />
+                <div className="Login">
+                    <button onClick={onclickConfirmButton} disabled={notAllow} className="LoginButton">
+                        로그인
+                    </button>
                 </div>
-                <div className="ErrorMessageWrap">
-                    {
-                        !pwValid && pw.length > 0 && (
-                            <div>영문, 숫자, 특수문자 포함 8자이상 입력해주세요.</div> // 비밀번호 박스에 적힌 글자수가 0보다 크면 활성화(원하는 조건을 만족하면 삭제)
-                        )
-                    }
-                </div>
-            </div>
-            <div className="Login">
-                <button onClick={onclickConfirmButton} disabled={notAllow} className="LoginButton">
-                    로그인
-                </button>
             </div>
         </div>
+        
     )
 }
