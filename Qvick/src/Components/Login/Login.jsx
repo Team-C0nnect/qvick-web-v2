@@ -51,7 +51,7 @@ export default function Login() {
             setNotAllow(false);
             return;
         }
-        setNotAllow(true);
+        setNotAllow(false);
     },[emailValid,pwValid]) // 이 두개의 설정 값의 변화가 일어날때 마다 버튼활성화 여부 체크
 
     return (
@@ -81,8 +81,9 @@ export default function Login() {
                     </div>
                 </div>
                 <div className="Login">
-                    <button onClick={onclickConfirmButton} disabled={notAllow} className="LoginButton">
-                        로그인
+                    <span className="LostPw">Lost yout password?</span>
+                    <button onClick={onclickConfirmButton} disabled={notAllow} className="LoginButton" style={{ fontSize: notAllow ? "initial" : "20px" }}>
+                        Login
                     </button>
                 </div>
             </div>
