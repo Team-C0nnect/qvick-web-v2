@@ -1,0 +1,17 @@
+.Head {
+    width: 300px;
+    background-color: #252931;
+    height: 100vh;
+}
+.HeadTitleWrap {
+    width: 300px;
+    height: 300px;
+}
+.HeadTitle {
+    color: #FFFFFF;
+    font-size: 55px;
+    font-weight: 500;
+    margin-left: 70px;
+    margin-top: 30px;
+    position: absolute;
+}
