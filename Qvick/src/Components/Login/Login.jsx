@@ -65,7 +65,7 @@ export default function Login() {
                         <input 
                             type="text"
                             className="Input"
-                            placeholder="이메일을 입력해주세요."
+                            placeholder="Enter email"
                             value={email}
                             onChange={HandleEmail}
                             />
@@ -74,7 +74,7 @@ export default function Login() {
                         <input 
                             type="password"
                             className="Input"
-                            placeholder="영문, 숫자, 특수문자 포함 비밀번호를 입력해주세요."
+                            placeholder="Enter password"
                             value={pw}
                             onChange={HandlePassWord}
                             />

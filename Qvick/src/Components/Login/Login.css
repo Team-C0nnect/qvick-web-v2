@@ -17,6 +17,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-top: 150px;
 }
 .LoginTitle {
     margin-top: 97px;
