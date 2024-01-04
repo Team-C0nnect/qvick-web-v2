@@ -18,7 +18,7 @@ export default function Login() {
   const HandleEmail = (e) => {
     setemail(e.target.value);
     const regex =
-      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+      /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;  //자바스크립트 공식문입니다(특수부호 감별)
     if (regex.test(email)) {
       setEmailValid(true);
     } else {
