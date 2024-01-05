@@ -1,0 +1,48 @@
+.Search{
+    position: absolute;
+    top: 8%;
+    left: 580px;
+    width: 840px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    border: 1px solid #252931;
+    background: #FFF;
+    z-index: 2;
+  }
+.Search_Box{
+    position: absolute;
+    outline: none;
+    font-size: 20px;
+    left: 20px;
+    top: 10px;
+    border: none;
+    width: 750px;
+    height: 30px;
+    display: flex;
+  }
+.Search_icon{
+    position: absolute;
+    cursor: pointer;
+    background-color: #FFF;
+    top: 9px;
+    left: 790px;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    border: 1px solid #252931;
+    border-radius: 50%;
+  }
+.Searcg_icon_line{
+    position: absolute;
+    cursor: pointer;
+    top: 35px;
+    left: 809px;
+    background-color: #252931;
+    transform: rotate( 50deg );
+    width: 13px;
+    height: 1px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: #1A9A18;
+  }
