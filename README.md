@@ -10,6 +10,7 @@
 |  CSS  | Visual Studio |
 |  JavaScript  | Visual Studio |
 |  HTML  | Visual Studio |
+|  TypeScript  | Visual Studio |
 
 ### Commit 규칙
 
