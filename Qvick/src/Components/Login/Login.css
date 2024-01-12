@@ -42,6 +42,7 @@
     width: 700px;
     height: 35px;
     align-items: center;
+    box-shadow: 2px 2px 2px 2px #1D1F25;
 }
 .PwInputWrap {
     display: flex;
@@ -54,6 +55,7 @@
     width: 700px;
     height: 35px;
     align-items: center;
+    box-shadow: 2px 2px 2px 2px #1D1F25;
 }
 .InputWrap:focus-within {
     border: 1px solid #868afc;
@@ -98,7 +100,7 @@
 .LoginButton:disabled{
     background-color: #dadada;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
 }
 .LostPw {
     color: #3A3F4A;
