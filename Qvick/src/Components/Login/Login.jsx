@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import Title from "../../Assets/img/logo.png";
 
 const User = {
   email: 'qvick@gmail.com',
@@ -64,7 +65,7 @@ export default function Login() {
     <div className="AllPage">
       <div className="LoginPage">
         <div className="LoginTitle">
-          Qvick
+          <img className="TitleImg" src={Title} alt = "이미지"></img>
         </div>
         <div className="ContentWrap">
           <div className="LoginInputWrap">
