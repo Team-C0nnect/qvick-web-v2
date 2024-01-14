@@ -57,7 +57,7 @@ export default function Login() {
     if (emailValid && pwValid) {
       setNotAllow(false);
     } else {
-      setNotAllow(true);
+      setNotAllow(false);
     }
   }, [emailValid, pwValid]);
 
@@ -88,7 +88,6 @@ export default function Login() {
           </div>
         </div>
         <div className="Login">
-          <span className="LostPw">Lost yout password?</span>
           <button
             onClick={onclickConfirmButton}
             disabled={notAllow}
