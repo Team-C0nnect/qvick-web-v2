@@ -106,12 +106,3 @@ export const LoginButton = styled.div`
         font-size: 25px;
     }
 `;
-export const LostPw = styled.div`
-    color: #3A3F4A;
-    margin-bottom: 10px;
-    margin-top: 70px;
-    margin-left: 100px;
-    font-size: 25px;
-    cursor: pointer;
-    position: absolute;
-`;
