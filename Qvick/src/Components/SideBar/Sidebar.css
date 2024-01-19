@@ -1,0 +1,12 @@
+.SideWrap {
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 100vh;;
+}
+.SideBar {
+    display: flex;
+    width: 200px;
+    height: 100vh;
+    background-color: #D9D9D9;
+}

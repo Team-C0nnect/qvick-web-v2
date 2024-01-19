@@ -15,7 +15,6 @@ export default function Login() {
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
-
   const HandleEmail = (e) => {
     setemail(e.target.value);
     const regex =
