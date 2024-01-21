@@ -10,3 +10,31 @@
     height: 100vh;
     background-color: #D9D9D9;
 }
+.SideM {
+    width: 200px;
+    height: 100vh;
+    font-size: 25px;
+    font-weight: 400;
+    position: relative;
+}
+.MemberWrap {
+    width: 70px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 30px;
+    position: absolute;
+}
+.CheckWrap {
+    width: 70px;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 160px;
+    position: absolute;
+}
+.HomeWrap {
+    width: 120px;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 360px;
+    position: absolute;
+}
