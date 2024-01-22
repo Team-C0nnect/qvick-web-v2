@@ -11,7 +11,7 @@ const User = {
 export default function Login() {
   const [email, setemail] = useState("");
   const [pw, setPw] = useState("");
-
+  const [keepLoggedIn, setKeepLoggedIn] = useState<boolean>(false); // 로그인 유지하기 상태
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
@@ -51,6 +51,9 @@ export default function Login() {
   const navigateToMain = () => {
     navigate("/Main");
   }
+  const handleKeepLoggedIn = () => {
+    setKeepLoggedIn(!keepLoggedIn);
+  };
 
   useEffect(() => {
     if (emailValid && pwValid) {
@@ -59,7 +62,6 @@ export default function Login() {
       setNotAllow(false);
     }
   }, [emailValid, pwValid]);
-
   return (
     <div className="AllPage">
       <div className="LoginPage">
@@ -95,6 +97,20 @@ export default function Login() {
           >
             Login
           </button>
+        </div>
+        <div className="CheckboxWrapper">
+          <div className="CheckboxBundle">
+            <div className="Checkbox"
+              type="checkbox"
+              id="keepLoggedInCheckbox" // 체크박스에 id 추가
+              checked={keepLoggedIn}
+              onChange={handleKeepLoggedIn}
+            />
+
+            <div className="CheckboxLabel" htmlFor="keepLoggedInCheckbox">
+              로그인 유지
+            </div>
+          </div>
         </div>
       </div>
     </div>
