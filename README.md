@@ -6,10 +6,10 @@
 ### 웹 기술 스택 (Skill)
 | Language  |      Tool      |
 |:--------:|:---------------:|
-|  REACT  | Visual Studio |
+|  HTML  | Visual Studio |
 |  CSS  | Visual Studio |
 |  JavaScript  | Visual Studio |
-|  HTML  | Visual Studio |
+|  REACT  | Visual Studio |
 |  TypeScript  | Visual Studio |
 
 ### Commit 규칙
