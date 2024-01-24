@@ -3,14 +3,12 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "jsx": "react",
+    "baseUrl": "./",
     "paths": {
       "@src/*": ["src/*"]
-    },
-    "baseUrl": ".",
+    }
   },
   "include": [
-    "src",
-    "@types/images.d.ts",
-    "src/index.tsx"
+    "src/**/*"
   ]
 }
