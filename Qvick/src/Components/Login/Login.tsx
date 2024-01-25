@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Title from "../../Assets/img/logo.png";
-import "./Login.css";
 import * as s from "src/Components/Login/Style/Login.Style"
 const User = {
   email: 'qvick@gmail.com',
@@ -53,68 +52,65 @@ export default function Login() {
   const navigateToMain = () => { 
     navigate("/Main");
   }
-  const handleKeepLoggedIn = () => {
+  const handleKeepLoggedIn = () => { // 로그인 유지
     setKeepLoggedIn((prevValue) => !prevValue);
   };
 
-  useEffect(() => {
+  useEffect(() => { // 버튼활성화 기능 필요 사용시 변경가능
     if (emailValid && pwValid) {
       setNotAllow(false);
     } else {
       setNotAllow(false);
     }
   }, [emailValid, pwValid]);
+
   return (
-    <div className="AllPage">
-      <div className="LoginPage">
-        <div className="LoginTitle">
-          <img className="TitleImg" src={Title} alt = "이미지"></img>
-        </div>
-        <div className="ContentWrap">
-          <div className="LoginInputWrap">
-            <input
+    <s.AllPage>
+      <s.LoginPage>
+        <s.LoginTitle>
+          <s.TitleImg src={Title} alt = "이미지"></s.TitleImg>
+        </s.LoginTitle>
+        <s.ContentWrap>
+          <s.LoginInputWrap>
+            <s.Input
               type="text"
-              className="Input"
               placeholder="Enter email"
               value={email}
               onChange={HandleEmail}
             />
-          </div>
-          <div className="PwInputWrap">
-            <input
+          </s.LoginInputWrap>
+          <s.PwInputWrap>
+            <s.Input
               type="password"
-              className="Input"
               placeholder="Enter password"
               value={pw}
               onChange={HandlePassWord}
             />
-          </div>
-        </div>
-        <div className="Login">
-          <button
+          </s.PwInputWrap>
+        </s.ContentWrap>
+        <s.LoginButtonWrap>
+          <s.LoginButton
             onClick={onclickConfirmButton}
             disabled={notAllow}
-            className="LoginButton"
             style={{ fontSize: notAllow ? "initial" : "20px" }}
           >
             Login
-          </button>
-        </div>
-        <div className="CheckboxWrapper">
-          <div className="CheckboxBundle">
-          <input
-            className="Checkbox"
+          </s.LoginButton>
+        </s.LoginButtonWrap>
+        <s.CheckboxWrapper>
+          <s.CheckboxBundle>
+          <s.Checkbox
             type="checkbox"
             id="keepLoggedInCheckbox"
             checked={keepLoggedIn}
             onChange={handleKeepLoggedIn}
           />
-          <label className="CheckboxLabel" htmlFor="keepLoggedInCheckbox">
+          <s.CheckboxLabel htmlFor="keepLoggedInCheckbox">
             로그인 유지
-          </label>
-          </div>
-        </div>
-      </div>
-    </div>
+          </s.CheckboxLabel>
+          </s.CheckboxBundle>
+        </s.CheckboxWrapper>
+      </s.LoginPage>
+    </s.AllPage>
   );
 }

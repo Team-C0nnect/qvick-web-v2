@@ -28,6 +28,8 @@ export const LoginTitle = styled.div`
     color: #FFFFFF;
     text-align: center;
 `;
+export const TitleImg = styled.img`
+`;
 export const ContentWrap = styled.div`
     margin-top: 26px;
     flex: 0;
@@ -36,35 +38,17 @@ export const LoginInputWrap = styled.div`
     display: flex;
     border-radius: 5px;
     padding: 16px;
-    margin-top: 68px;
+    margin-top: 58px;
     margin-bottom: 58px;
-    margin-left: 40px;
+    margin-left: 100px;
     background-color: #3A3F4A;
     border: 1px solid #3A3F4A;
-    width: 700px;
+    width: 600px;
     height: 35px;
     align-items: center;
     box-shadow: 2px 2px 2px 2px #1D1F25;
 `;
-export const PwInputWrap = styled.div`
-    display: flex;
-    border-radius: 5px;
-    padding: 16px;
-    margin-top: 8px;
-    margin-left: 40px;
-    background-color: #3A3F4A;
-    border: 1px solid #3A3F4A;
-    width: 700px;
-    height: 35px;
-    align-items: center;
-    box-shadow: 2px 2px 2px 2px #1D1F25;
-`;
-export const InputWrap = styled.div`
-    &:focus-within {
-        border: 1px solid #868afc;
-    }
-`;
-export const Input = styled.div`
+export const Input = styled.input`
     width: 865px;
     outline: none;
     border: none;
@@ -83,21 +67,38 @@ export const Input = styled.div`
         background-color: #3A3F4A;
     }
 `;
-export const Login = styled.div`
-    border-top: 2px solid #3A3F4A;
+export const PwInputWrap = styled.div`
+    display: flex;
+    border-radius: 5px;
+    padding: 16px;
+    margin-top: -8px;
+    margin-left: 100px;
+    background-color: #3A3F4A;
+    border: 1px solid #3A3F4A;
+    width: 600px;
+    height: 35px;
+    align-items: center;
+    box-shadow: 2px 2px 2px 2px #1D1F25;
+`;
+export const InputWrap = styled.div`
+    &:focus-within {
+        border: 1px solid #868afc;
+    }
+`;
+export const LoginButtonWrap = styled.div`
     margin-top: 70px;
 `;
-export const LoginButton = styled.div`
-    width: 230px;
-    height: 68px;
+export const LoginButton = styled.button`
+    width: 630px;
+    height: 72px;
     border: none;
     font-weight: 700;
-    background-color: #58B7D3;
-    border-radius: 15px;
+    background-color: #41C982;
+    border-radius: 5px;
     color: white;
     margin-bottom: 16px;
-    margin-top: 50px;
-    margin-right: 60px;
+    margin-top: -10px;
+    margin-right: 70px;
     cursor: pointer;
     float: right;
     &:disabled{
@@ -105,4 +106,45 @@ export const LoginButton = styled.div`
         color: white;
         font-size: 25px;
     }
+`;
+export const CheckboxWrapper = styled.div`
+    display: flex;
+    width: 200px;
+    height: 30px;
+`;
+export const CheckboxBundle = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const Checkbox = styled.input.attrs({ type: "checkbox" })`
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  margin-right: 10px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  &:checked {
+    background-color: #41C982;
+    border-color: #41C982;
+    &:checked::after {
+      content: "✔️";
+      position: absolute;
+      color: #ffffff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-33%, -38%);
+      width: 20px;
+      height: 20px;
+    }
+  }
+`;
+export const CheckboxLabel = styled.label`
+    font-size: 18px;
+    color: #FFFFFF;
 `;
