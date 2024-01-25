@@ -21,7 +21,7 @@ export const LoginPage = styled.div`
     flex-direction: column;
     margin-top: 50px;
 `;
-export const LoginTtitle = styled.div`
+export const LoginTitle = styled.div`
     margin-top: 97px;
     font-size: 96px;
     font-weight: 700;
