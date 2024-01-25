@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import Title from "../../Assets/img/logo.png";
-
+import "./Login.css";
+import * as s from "src/Components/Login/Style/Login.Style"
 const User = {
   email: 'qvick@gmail.com',
   pw: 'qvick1234@+'
@@ -16,8 +16,9 @@ export default function Login() {
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);
-  const HandleEmail = (e) => {
-    setemail(e.target.value);
+
+  const HandleEmail = (e) => { // 이메일 확인 추후 아이디로 변경예정
+    setemail(e.target.value); // 이메일 지우기 기능
     const regex =
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;  //자바스크립트 공식문입니다(특수부호 감별)
     if (regex.test(email)) {
@@ -27,8 +28,8 @@ export default function Login() {
     }
   }
 
-  const HandlePassWord = (e) => {
-    setPw(e.target.value);
+  const HandlePassWord = (e) => { // 비밀번호 확인
+    setPw(e.target.value); // 비밀번호 지우기 가능
     const regex =
       /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,20}$/;
     if (regex.test(pw)) {
@@ -47,9 +48,9 @@ export default function Login() {
     }
   }
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // 네이게이션 활성화
 
-  const navigateToMain = () => {
+  const navigateToMain = () => { 
     navigate("/Main");
   }
   const handleKeepLoggedIn = () => {
