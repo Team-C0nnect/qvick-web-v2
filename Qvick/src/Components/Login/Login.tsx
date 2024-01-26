@@ -10,7 +10,6 @@ const User = {
 export default function Login() {
   const [email, setemail] = useState("");
   const [pw, setPw] = useState("");
-  // const [keepLoggedIn, setKeepLoggedIn] = useState<boolean>(false); // 로그인 유지하기 상태
   const [keepLoggedIn, setKeepLoggedIn] = useState<boolean>(false); // 로그인 유지하기 상태
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
