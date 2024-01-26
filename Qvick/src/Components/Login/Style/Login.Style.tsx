@@ -95,7 +95,7 @@ export const LoginButtonWrap = styled.div`
     margin-top: 70px;
 `;
 export const LoginButton = styled.button`
-    width: 630px;
+    width: 640px;
     height: 72px;
     border: none;
     font-weight: 700;
@@ -104,7 +104,7 @@ export const LoginButton = styled.button`
     color: white;
     margin-bottom: 16px;
     margin-top: -10px;
-    margin-right: 70px;
+    margin-right: 62px;
     cursor: pointer;
     float: right;
     &:disabled{
@@ -163,7 +163,7 @@ export const Checkbox = styled.input.attrs({ type: "checkbox" })`
 export const CheckboxLabel = styled.label`
     font-size: 18px;
     color: #FFFFFF;
-    margin-left: 140px;
+    margin-left: 135px;
     align-items: center; 
     width: 100px;
     margin-top: 3px;
