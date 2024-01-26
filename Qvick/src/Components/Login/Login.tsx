@@ -99,15 +99,15 @@ export default function Login() {
         </s.LoginButtonWrap>
         <s.CheckboxWrapper>
           <s.CheckboxBundle>
-          <s.Checkbox
-            type="checkbox"
-            id="keepLoggedInCheckbox"
-            checked={keepLoggedIn}
-            onChange={handleKeepLoggedIn}
-          />
-          <s.CheckboxLabel htmlFor="keepLoggedInCheckbox">
-            로그인 유지
-          </s.CheckboxLabel>
+            <s.Checkbox
+              type="checkbox"
+              id="keepLoggedInCheckbox"
+              checked={keepLoggedIn}
+              onChange={handleKeepLoggedIn}
+            />
+            <s.CheckboxLabel htmlFor="keepLoggedInCheckbox">
+              로그인 유지
+            </s.CheckboxLabel>
           </s.CheckboxBundle>
         </s.CheckboxWrapper>
       </s.LoginPage>
