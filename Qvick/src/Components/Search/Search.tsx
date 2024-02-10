@@ -1,4 +1,5 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
+import * as s from "src/Components/Search/Style/Search.Style";
 import axios from "axios";
 
 interface User {
@@ -9,9 +10,9 @@ interface User {
     userRole: string;
   }
   
-  interface AttendanceInfo {
+interface AttendanceInfo {
     checkedDate: string;
-  }
+}
 
 export default function Search() {
     const [searchTerm, setSearchTerm] = useState<string>("");
@@ -47,8 +48,8 @@ export default function Search() {
     }, [userInfo]);
     
     return (
-        <div className="SearchBox">
-                <input
+        <s.SearchBox>
+                <s.Search
                     className="Search"
                     placeholder="학생정보를 입력해주세요."
                     value={searchTerm}
@@ -57,17 +58,17 @@ export default function Search() {
                     onKeyDown={searchUser}
                 />
                 {Object.keys(userInfo).length !== 0 && (
-                    <div className="ResultWrap">
-                        <div className="User">{userInfo.name}</div>
-                        <div className="UserCheck">
+                    <s.ResultWrap>
+                        <s.User>{userInfo.name}</s.User>
+                        <s.UserCheck>
                             {attendanceInfo.length > 0 ? (
                                 <p>{`출석일: ${attendanceInfo.map(item => item.checkedDate).join(', ')}`}</p>
                             ) : (
                                 <p>출석 기록이 없습니다.</p>
                             )}
-                        </div>
-                    </div>
+                        </s.UserCheck>
+                    </s.ResultWrap>
                 )}
-            </div>
+        </s.SearchBox>
     )
 }
