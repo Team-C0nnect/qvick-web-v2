@@ -1,3 +1,14 @@
+/node_modules
 node_modules/
+/.pnp
 package-lock.json
+.pnp.js
+/coverage
+/build
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
 .env
