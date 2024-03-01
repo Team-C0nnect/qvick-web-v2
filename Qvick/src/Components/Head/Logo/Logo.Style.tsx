@@ -9,10 +9,10 @@ export const LogoWrap = styled.div`
 `;
 export const Logo = styled.img`
     display: flex;
-    width: 95px;
+    width: 75px;
     height: 70px;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 20px;
 `;
 export const Ch = styled.img`
     display: flex;
