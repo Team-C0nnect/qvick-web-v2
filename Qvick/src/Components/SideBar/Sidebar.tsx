@@ -1,16 +1,16 @@
-import "./Sidebar.css";
+import * as S from "src/Components/SideBar/Sidebar.Style"
 import React from 'react';
 
 export default function SideBar() {
     return (
-        <div className="SideWrap">
-            <div className="SideBar">
-                <div className="SideM">
-                    <div className="MemberWrap">구성원</div>
-                    <div className="CheckWrap">출석</div>
-                    <div className="HomeWrap">외출/외박</div>
-                </div>
-            </div>
-        </div>
+        <S.SideWrap>
+            <S.SideBar>
+                <S.SideM>
+                    <S.MemberWrap>구성원</S.MemberWrap>
+                    <S.CheckWrap>출석</S.CheckWrap>
+                    <S.HomeWrap>외출/외박</S.HomeWrap>
+                </S.SideM>
+            </S.SideBar>
+        </S.SideWrap>
     )
 }
