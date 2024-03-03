@@ -4,9 +4,9 @@ import Head from "src/Components/Head/Head/Head";
 import SideBar from "src/Components/SideBar/Sidebar";
 
 
-export default function Member() {
+export default function NotCheck() {
     return (
-        <div className="MemberWrap">
+        <div className="NotCheckWrap">
             <Head />
             <SideBar />
         </div>

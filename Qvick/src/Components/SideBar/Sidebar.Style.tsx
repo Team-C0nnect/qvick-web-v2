@@ -10,7 +10,7 @@ export const SideBar = styled.div`
     display: flex;
     width: 200px;
     height: 100vh;
-    background-color: #D9D9D9;
+    background-color: #343A47;
 `;
 export const SideM = styled.div`
     width: 200px;
@@ -18,12 +18,13 @@ export const SideM = styled.div`
     font-size: 25px;
     font-weight: 400;
     position: relative;
+    color: #FFFFFF;
 `;
 export const MemberWrap = styled.div`
-    width: 70px;
-    height: 30px;
-    margin-top: 30px;
-    margin-left: 30px;
+    width: 150px;
+    height: 50px;
+    background-color: #314162;
+    border-left: 2px solid #41C982;
     position: absolute;
 `;
 export const CheckWrap = styled.div`
@@ -32,6 +33,12 @@ export const CheckWrap = styled.div`
     margin-left: 30px;
     margin-top: 160px;
     position: absolute;
+`;
+export const NotCheckWrap = styled.div`
+    
+`;
+export const OutWrap = styled.div`
+    
 `;
 export const HomeWrap = styled.div`
     width: 120px;

@@ -6,6 +6,11 @@ import Head from "src/Components/Head/Head/Head";
 import Side from "src/Components/SideBar/Sidebar";
 import HeadLogo from "src/Components/Head/Logo/Logo";
 import HeadName from "src/Components/Head/Name/Name";
+import Member from "src/Components/Member/Member";
+import Check from "src/Components/Check/Check";
+import NotCheck from "src/Components/NotCheck/NotCheck";
+import OutMember from "src/Components/OutMember/OutMember";
+import HomeMember from "src/Components/HomeMember/HomeMember.Style";
 
 function App() {
   return (
@@ -18,6 +23,11 @@ function App() {
           <Route path="/Side" element={<Side />} />
           <Route path="/HeadLogo" element={<HeadLogo />} />
           <Route path="/HeadName" element={<HeadName />} />
+          <Route path="/Member" element={<Member />} />
+          <Route path="/Check" element={<Check />} />
+          <Route path="/NotCheck" element={<NotCheck />} />
+          <Route path="/OutMember" element={<OutMember />} />
+          <Route path="/HomeMember" element={<HomeMember />} />
         </Routes>
       </div>
     </BrowserRouter>

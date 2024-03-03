@@ -3,10 +3,9 @@ import axios from 'axios';
 import Head from "src/Components/Head/Head/Head";
 import SideBar from "src/Components/SideBar/Sidebar";
 
-
-export default function Member() {
+export default function HomeMember() {
     return (
-        <div className="MemberWrap">
+        <div className="HomeMemberWrap">
             <Head />
             <SideBar />
         </div>
