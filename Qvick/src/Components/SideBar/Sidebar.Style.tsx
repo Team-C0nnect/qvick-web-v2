@@ -21,29 +21,57 @@ export const SideM = styled.div`
     color: #FFFFFF;
 `;
 export const MemberWrap = styled.div`
-    width: 150px;
-    height: 50px;
+    width: 155px;
+    height: 55px;
     background-color: #314162;
-    border-left: 2px solid #41C982;
+    border-left: 3px solid #41C982;
     position: absolute;
+    top: 30px;
+    left: 20px;
+    text-align: center;
+    line-height: 60px;
 `;
 export const CheckWrap = styled.div`
-    width: 70px;
-    height: 30px;
-    margin-left: 30px;
-    margin-top: 160px;
+    width: 155px;
+    height: 55px;
+    background-color: #314162;
+    border-left: 3px solid #41C982;
     position: absolute;
+    top: 110px;
+    left: 20px;
+    text-align: center;
+    line-height: 60px;
 `;
 export const NotCheckWrap = styled.div`
-    
+    width: 155px;
+    height: 55px;
+    background-color: #314162;
+    border-left: 3px solid #41C982;
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    text-align: center;
+    line-height: 60px;
 `;
 export const OutWrap = styled.div`
-    
+    width: 155px;
+    height: 55px;
+    background-color: #314162;
+    border-left: 3px solid #41C982;
+    position: absolute;
+    top: 270px;
+    left: 20px;
+    text-align: center;
+    line-height: 60px;
 `;
 export const HomeWrap = styled.div`
-    width: 120px;
-    height: 30px;
-    margin-left: 30px;
-    margin-top: 360px;
+    width: 155px;
+    height: 55px;
+    background-color: #314162;
+    border-left: 3px solid #41C982;
     position: absolute;
+    top: 350px;
+    left: 20px;
+    text-align: center;
+    line-height: 60px;
 `;
