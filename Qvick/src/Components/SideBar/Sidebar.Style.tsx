@@ -75,3 +75,31 @@ export const HomeWrap = styled.div`
     text-align: center;
     line-height: 60px;
 `;
+export const HomeIcon = styled.img`
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 13px;
+    left: 10px;
+`;
+export const CheckIcon = styled.img`
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 14px;
+    left: 10px;
+`;
+export const GoIcon = styled.img`
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 14px;
+    left: 10px;
+`;
+export const outIcon = styled.img`
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 14px;
+    left: 10px;
+`;
