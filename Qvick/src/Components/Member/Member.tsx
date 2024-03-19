@@ -1,14 +1,17 @@
 import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
+import * as S from "src/Components/Member/Member.Style"
 import axios from 'axios';
 import Head from "src/Components/Head/Head/Head";
 import SideBar from "src/Components/SideBar/Sidebar";
+import Back from "src/Components/Back/Back";
 
 
 export default function Member() {
     return (
-        <div className="MemberWrap">
+        <S.MemberWrap>
             <Head />
             <SideBar />
-        </div>
+            <Back />
+        </S.MemberWrap>
     );
 }

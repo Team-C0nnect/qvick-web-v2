@@ -2,15 +2,17 @@ import React, { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
 import axios from 'axios';
 import Head from "src/Components/Head/Head/Head";
 import SideBar from "src/Components/SideBar/Sidebar";
-import * as s from "src/Components/Main/Main.Style";
+import Back from "src/Components/Back/Back";
+import * as S from "src/Components/Main/Main.Style";
 
 
 
 export default function Main() {
     return (
-        <div className="Main">
+        <S.MainWrap>
             <Head />
             <SideBar />
-        </div>
+            <Back />
+        </S.MainWrap>
     );
 }
