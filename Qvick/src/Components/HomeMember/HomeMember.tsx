@@ -11,6 +11,8 @@ export default function HomeMember() {
             <Head />
             <SideBar />
             <Back />
+            <S.Title>외박 관리</S.Title>
+            <S.Footer>2024 DGSW.School C0nnect</S.Footer>
         </S.HomeMemberWrap>
     );
 }

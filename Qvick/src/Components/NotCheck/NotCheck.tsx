@@ -12,6 +12,8 @@ export default function NotCheck() {
             <Head />
             <SideBar />
             <Back />
+            <S.Title>미출석 관리</S.Title>
+            <S.Footer>2024 DGSW.School C0nnect</S.Footer>
         </S.NotCheckWrap>
     );
 }

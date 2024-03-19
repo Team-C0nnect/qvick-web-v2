@@ -12,6 +12,8 @@ export default function Member() {
             <Head />
             <SideBar />
             <Back />
+            <S.Title>구성원 관리</S.Title>
+            <S.Footer>2024 DGSW.School C0nnect</S.Footer>
         </S.MemberWrap>
     );
 }
