@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Title from "../../Assets/img/logo.png";
+import Title from "src/Assets/img/logo.png";
 import * as s from "src/Components/Login/Style/Login.Style"
 const User = {
   email: 'qvick@gmail.com',

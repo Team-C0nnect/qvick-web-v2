@@ -29,8 +29,8 @@ export const LoginTitle = styled.div`
     text-align: center;
 `;
 export const TitleImg = styled.img`
-    width: 160px;
-    height: 85px;
+    width: 230px;
+    height: 135px;
     margin-bottom: 20px;
 `;
 export const ContentWrap = styled.div`
