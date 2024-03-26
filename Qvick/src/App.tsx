@@ -12,7 +12,8 @@ import NotCheck from "src/Components/NotCheck/NotCheck";
 import OutMember from "src/Components/OutMember/OutMember";
 import HomeMember from "src/Components/HomeMember/HomeMember";
 import Back from "src/Components/Back/Back";
-
+import MainList from "src/Components/Main/MainList/MainList";
+import ListBack from "src/Components/ListBack/ListBack";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="/OutMember" element={<OutMember />} />
           <Route path="/HomeMember" element={<HomeMember />} />
           <Route path="/Back" element={<Back />} />
+          <Route path='/MainList' element={<MainList />} />
+          <Route path='ListBack' element={<ListBack />} />
         </Routes>
       </div>
     </BrowserRouter>
