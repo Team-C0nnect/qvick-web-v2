@@ -6,5 +6,5 @@ export const listBack = styled.div`
     height: 680px;
     background-color: #FFFFFF;
     top: 200px;
-    right: 45px;
+    right: 30px;
 `;
