@@ -16,16 +16,16 @@ export default function MainList() {
     }, []);
 
     return (
-        <div className="MainList">
-            <table>
-                <colgroup>
-                    <col width="20%"/>
-                    <col width="20%"/>
-                    <col width="20%"/>
-                    <col width="20%"/>
-                    <col width="20%"/>
-                </colgroup>
-                <thead>
+        <S.MainList>
+            <S.MainTable>
+                <S.MainColgroup>
+                    <col width="15%"/>
+                    <col width="15%"/>
+                    <col width="15%"/>
+                    <col width="15%"/>
+                    <col width="40%"/>
+                </S.MainColgroup>
+                <S.MainThread>
                     <tr>
                         <th>학년</th>
                         <th>반</th>
@@ -34,8 +34,21 @@ export default function MainList() {
                         <th>출석</th>
                         <th>기숙사</th>
                     </tr>
-                </thead>
-            </table>
-        </div>
+                </S.MainThread>
+                <S.MainTbody>
+                    {
+                        mainList.map((id,userId,checkedDate) => {
+                            return (
+                                <tr>
+                                    <td>{id}</td>
+                                    <td>{userId}</td>
+                                    <td>{checkedDate}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                </S.MainTbody>
+            </S.MainTable>
+        </S.MainList>
     );
 }

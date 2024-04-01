@@ -13,8 +13,8 @@ export default function Main() {
             <Head />
             <SideBar />
             <Back />
-            <MainList />
             <ListBack />
+            <MainList />
             <S.Title>구성원 관리</S.Title>
             <S.Footer>2024 DGSW.School C0nnect</S.Footer>
         </S.MainWrap>
