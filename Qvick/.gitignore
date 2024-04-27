@@ -13,3 +13,6 @@ package-lock.json
 npm-debug.log*
 .env
 build
+*.config
+/config
+config
