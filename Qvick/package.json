@@ -19,6 +19,7 @@
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
     "styled-components": "^6.1.8",
+    "sweetalert2": "^11.10.8",
     "typescript": "^3.2.1",
     "web-vitals": "^2.1.4"
   },
