@@ -1,5 +1,5 @@
 import cookie from "src/libs/cookie/cookie";
-import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from "@src/constants/tokens/token.constants";
+import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from "src/constants/tokens/token.constants";
 
 class Token {
     public getToken(key: string): string | undefined {

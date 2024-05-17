@@ -1,5 +1,5 @@
 import axios from "axios";
-import authHeader from "src/services/auth-header";
+import authHeader from "src/hooks/auth/auth-header";
 import api_URL from "src/config/authlogin.json";
 
 class UserService {
