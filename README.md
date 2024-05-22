@@ -1,5 +1,5 @@
 # 안녕하세요! Qvick 개발팀 C0nnect 입니다.  💪
-<img src='https://ifh.cc/g/r6R4ya.png' border='0'>
+![깃허브 배너](https://github.com/lgwk42/test/assets/76110334/74e9f2ef-09c6-4475-9739-f3e6c88cdea2)
 <br><br/>
 
 # OUR PROJECT! 
