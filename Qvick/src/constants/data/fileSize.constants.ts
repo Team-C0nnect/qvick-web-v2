@@ -1,0 +1,1 @@
+export const FILE_SIZES = ["B", "KB", "MB", "GB", "TB"] as const
