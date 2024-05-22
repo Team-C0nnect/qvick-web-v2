@@ -1,10 +1,10 @@
 import * as S from "src/Components/SideBar/Sidebar.Style"
 import { useNavigate } from "react-router-dom";
 import React from 'react';
-import home from "src/Assets/img/home.png";
-import out from "src/Assets/img/out.png";
-import check from "src/Assets/img/check.png";
-import go from "src/Assets/img/go.png";
+import home from "src/Assets/images/SideBar/home.png";
+import out from "src/Assets/images/SideBar/out.png";
+import check from "src/Assets/images/SideBar/check.png";
+import go from "src/Assets/images/SideBar/go.png";
 
 export default function SideBar() {
     const navigate = useNavigate();

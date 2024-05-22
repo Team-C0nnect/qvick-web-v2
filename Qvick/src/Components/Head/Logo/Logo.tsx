@@ -1,7 +1,6 @@
 import * as S from "src/Components/Head/Logo/Logo.Style"
-import React from "react";
-import AppLogo from "src/Assets/img/appLogo.png";
-import Ch from "src/Assets/img/CH.png";
+import AppLogo from "src/Assets/images/Head/appLogo.png"
+import Ch from "src/Assets/images/Head/CH.png";
 
 export default function Logo() {
     return (
