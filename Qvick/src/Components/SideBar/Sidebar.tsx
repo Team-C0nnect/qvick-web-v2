@@ -10,45 +10,50 @@ export default function SideBar() {
     const navigate = useNavigate();
     return (
         <S.SideWrap>
-            <S.SideBar>
-                <S.SideM>
-                    <S.MemberWrap
-                        onClick={() => {
-                            navigate("/Main")
-                        }}>
-                        <S.HomeIcon src={home} alt="이미지"></S.HomeIcon>
-                        구성원
-                    </S.MemberWrap>
-                    <S.CheckWrap
-                        onClick={() => {
-                            navigate("/Check")
-                        }}>
-                        <S.CheckIcon src={check} alt="이미지"></S.CheckIcon>
-                        출석
-                    </S.CheckWrap>
-                    <S.NotCheckWrap
-                        onClick={() => {
-                            navigate("/NotCheck")
-                        }}>
-                        <S.CheckIcon src={check} alt="이미지"></S.CheckIcon>
-                        미출석
-                    </S.NotCheckWrap>
-                    <S.OutWrap
-                        onClick={() => {
-                            navigate("/OutMember")
-                        }}>
-                        <S.GoIcon src={go} alt="이미지"></S.GoIcon>
-                        외출
-                    </S.OutWrap>
-                    <S.HomeWrap
-                        onClick={() => {
-                            navigate("/HomeMember")
-                        }}>
-                        <S.outIcon src={out} alt="이미지"></S.outIcon>
-                        외박
-                    </S.HomeWrap>
-                </S.SideM>
-            </S.SideBar>
+            <S.SideM>
+                 <S.moveWrap
+                    onClick={() => {
+                        navigate("/Main")
+                    }}>
+                    <img src={home} alt="이미지"></img>
+                      <span>구성원</span>
+                </S.moveWrap>
+                <S.moveWrap
+                    onClick={() => {
+                        navigate("/Check")
+                    }}>
+                    <img src={check} alt="이미지"></img>
+                    <span>출석</span>
+                </S.moveWrap>
+                <S.moveWrap  
+                    onClick={() => {
+                        navigate("/NotCheck")
+                    }}>
+                    <img src={check} alt="이미지"></img>
+                    <span>미출석</span>
+                </S.moveWrap>
+                <S.moveWrap
+                    onClick={() => {
+                        navigate("/OutMember")
+                    }}>
+                    <img src={go} alt="이미지"></img>
+                    <span>외출</span>
+                </S.moveWrap>
+                <S.moveWrap
+                    onClick={() => {
+                        navigate("/HomeMember")
+                    }}>
+                    <img src={out} alt="이미지"></img>
+                    <span>외박</span>
+                </S.moveWrap>
+                <S.moveWrap
+                    onClick={() => {
+                         navigate("/Approve")
+                    }}>
+                    <img src={check} alt="이미지"></img>
+                    <span>승인</span>
+                </S.moveWrap>
+             </S.SideM>
         </S.SideWrap>
     )
 }
