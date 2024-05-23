@@ -13,6 +13,7 @@ import HomeMember from "src/Components/HomeMember/HomeMember";
 import Back from "src/Components/Back/Back";
 import MainList from "src/Components/Main/MainList/MainList";
 import ListBack from "src/Components/ListBack/ListBack";
+import Approve from "src/Components/Approve/index";
 import "./styles/global.css"
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/Back" element={<Back />} />
           <Route path='/MainList' element={<MainList />} />
           <Route path='ListBack' element={<ListBack />} />
+          <Route path='/Approve' element={<Approve />} />
         </Routes>
       </div>
     </BrowserRouter>
