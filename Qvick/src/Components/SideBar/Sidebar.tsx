@@ -14,7 +14,7 @@ export default function SideBar() {
                 <S.SideM>
                     <S.MemberWrap
                         onClick={() => {
-                            navigate("/Member")
+                            navigate("/Main")
                         }}>
                         <S.HomeIcon src={home} alt="이미지"></S.HomeIcon>
                         구성원

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from "src/Components/Login/Login";
-import Main from "src/Components/Main/Main";
 import Head from "src/Components/Head/Head/Head";
 import Side from "src/Components/SideBar/Sidebar";
 import HeadLogo from "src/Components/Head/Logo/Logo";
@@ -22,12 +21,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/Main" element={<Main />} />
           <Route path="/Head" element={<Head />} />
           <Route path="/Side" element={<Side />} />
           <Route path="/HeadLogo" element={<HeadLogo />} />
           <Route path="/HeadName" element={<HeadName />} />
-          <Route path="/Member" element={<Member />} />
+          <Route path="/Main" element={<Member />} />
           <Route path="/Check" element={<Check />} />
           <Route path="/NotCheck" element={<NotCheck />} />
           <Route path="/OutMember" element={<OutMember />} />
