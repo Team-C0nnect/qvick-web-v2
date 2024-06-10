@@ -20,5 +20,5 @@
     },
     "baseUrl": "."
   },
-  "include": ["src", "@types/images.d.ts"]
+  "include": ["src", "@types/images.d.ts", "config.json", ]
 }
