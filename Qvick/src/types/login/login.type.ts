@@ -1,8 +1,4 @@
 export interface LoginRespones {
-    
-            accessToken: string;
-            refreshToken: string;
-    
-    
-    
+    accessToken: string;
+    refreshToken: string;
 }
