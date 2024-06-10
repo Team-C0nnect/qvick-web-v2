@@ -14,7 +14,7 @@ export const requestHandler = (config: AxiosRequestConfig) => {
     if (access_token || refresh_token) {
         config.headers = {
             "Content-Type": "application/json",
-            [REFRESH_TOKEN_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
+            [REQUEST_TOKEN_KEY]: `Bearer ${Token.getToken(ACCESS_TOKEN_KEY)}`,
         };
     }
     return config;
