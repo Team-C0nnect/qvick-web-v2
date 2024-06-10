@@ -6,11 +6,9 @@ import HeadSearch from "src/Components/Head/Search/Search";
 export default function Head() {
     return (
         <S.Head>
-            <S.HeadTitleWrap>
-                <HeadLogo />
-                <HeadSearch />
-                <HeadName />
-            </S.HeadTitleWrap>
+            <HeadLogo />
+            <HeadSearch />
+            <HeadName />
         </S.Head>
     )
 }
