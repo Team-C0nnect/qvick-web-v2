@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const NotCheckWrap = styled.div`
-    
+    width: 100vw;
+    height: 100vh;
 `;
 export const Title = styled.div`
-position: absolute;
-color: #2E335D;
-top: 135px;
-left: 300px;
-font-size: 25px;
-font-weight: 60px;
+    position: absolute;
+    color: #2E335D;
+    top: 135px;
+    left: 300px;
+    font-size: 25px;
+    font-weight: 60px;
 `;
 export const Footer = styled.div`
     position: absolute;
