@@ -107,7 +107,7 @@ const NotCheckList = () => {
                             ))
                         ) : (
                             <tr>
-                                <td colSpan={4}>No items to display</td>
+                                <td colSpan={4}>데이터가 존재하지 않습니다.</td>
                             </tr>
                         )}
                     </S.Tbody>
