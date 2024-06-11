@@ -9,7 +9,6 @@ export default function Check() {
             <Head />
             <SideBar />
             <CheckList />
-            {/* <Back /> */}
         </S.CheckWrap>
     );
 };
