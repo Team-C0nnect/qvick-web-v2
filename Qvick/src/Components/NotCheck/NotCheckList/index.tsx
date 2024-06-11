@@ -31,11 +31,13 @@ const NotCheckList = () => {
     }, []);
 
     const exportToExcel = () => {
-        const worksheet = XLSX.utils.json_to_sheet(notCheckList);
+        const dataForExcel = notCheckList.map(({ stdId, room, name }) => ({ stdId, room, name }));
+        const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
         XLSX.writeFile(workbook, '미출석자.xlsx');
     };
+    
 
     if (isLoading) {
         return <p>Loading...</p>;
