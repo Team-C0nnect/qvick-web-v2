@@ -51,6 +51,9 @@ export const Thead = styled.thead`
     font-weight: bold;
     color: #fff;
     background: #343A47;
+    z-index: 1;
+    position: sticky;
+    top: 0; 
 `;
 export const Tbody = styled.tbody`
     overflow-x: auto;
