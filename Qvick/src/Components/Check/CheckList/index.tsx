@@ -10,7 +10,7 @@ const CheckList = () => {
 
     const fetchCheckList = async() => {
         await qvickV1Axios.get(`attendance/check`,{
-          params:{  page: 1,size: 5},
+          params:{  page: 1,size: 1000},
         })
         .then((response) => {
             setCheckList(response.data);
