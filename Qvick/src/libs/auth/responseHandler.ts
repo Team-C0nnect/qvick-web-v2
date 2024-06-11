@@ -7,9 +7,6 @@ import {
 import token from "src/libs/token/token"
 import { qvickV1Axios } from "./CustomAxios";
 import CONFIG from "src/config/config.json";
-import { resolve } from "path";
-import { rejects } from "assert";
-import { access } from "fs";
 
 //리프레쉬 작업중인지 아닌지를 구분하는 변수
 let isRefreshing = false;
