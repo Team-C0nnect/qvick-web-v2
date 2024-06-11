@@ -31,10 +31,11 @@ const CheckList = () => {
     }, []);
 
     const exportToExcel = () => {
-        const worksheet = XLSX.utils.json_to_sheet(checkList);
+        const dataForExcel = checkList.map(({ stdId, name, room, checkedDate }) => ({ stdId, name, room, checkedDate }));
+        const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
-        XLSX.writeFile(workbook, 'check_list.xlsx');
+        XLSX.writeFile(workbook, '출석자.xlsx');
     };
 
     if (isLoading) {

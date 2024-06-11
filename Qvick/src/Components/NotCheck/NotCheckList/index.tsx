@@ -31,7 +31,7 @@ const NotCheckList = () => {
     }, []);
 
     const exportToExcel = () => {
-        const dataForExcel = notCheckList.map(({ stdId, room, name }) => ({ stdId, room, name }));
+        const dataForExcel = notCheckList.map(({ stdId, name, room }) => ({ stdId, name, room }));
         const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
