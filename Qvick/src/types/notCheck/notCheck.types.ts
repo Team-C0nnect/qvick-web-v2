@@ -1,4 +1,4 @@
-export interface MemberType {
+export interface notCheckListType {
     "id": number,
     "userId": number,
     "stdId": string,
