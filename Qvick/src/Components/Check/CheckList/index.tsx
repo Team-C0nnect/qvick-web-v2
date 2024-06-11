@@ -104,7 +104,7 @@ const CheckList = () => {
                                     <td>{item.stdId}</td>
                                     <td>{item.name}</td>
                                     <td>{item.room}호</td>
-                                    <td>{item.checkedDate}</td>
+                                    <td>{new Date(item.checkedDate).toLocaleTimeString()}</td>
                                 </tr>
                             ))
                         ) : (
