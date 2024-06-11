@@ -2,6 +2,7 @@ import * as S from "src/Components/Check/CheckList/style";
 import { useEffect, useState } from "react";
 import { ListType } from "src/types/check/check.types";
 import { qvickV1Axios } from "src/libs/auth/CustomAxios";
+import * as XLSX from 'xlsx';
 
 const CheckList = () => {
     const [checkList, setCheckList] = useState<ListType[]>([]);
@@ -29,6 +30,13 @@ const CheckList = () => {
         fetchCheckList();
     }, []);
 
+    const exportToExcel = () => {
+        const worksheet = XLSX.utils.json_to_sheet(checkList);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
+        XLSX.writeFile(workbook, 'check_list.xlsx');
+    };
+
     if (isLoading) {
         return <p>Loading...</p>;
     }
@@ -40,6 +48,7 @@ const CheckList = () => {
     return (
         <S.MainWrap>
             <S.Title>출석인원 관리</S.Title>
+            <S.excelButton onClick={exportToExcel}>Excel</S.excelButton>
             <S.ListWrap>
                 <S.Thead>
                     <S.theadTr>

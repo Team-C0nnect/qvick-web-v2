@@ -34,7 +34,6 @@ export const excelButton = styled.button`
     height: 50px;
     border-radius: 10px;
     transform: translateX(550px) translateY(50px);
-    ;
 `;
 export const Table = styled.table`  
     border: 1px #a39485 solid;
