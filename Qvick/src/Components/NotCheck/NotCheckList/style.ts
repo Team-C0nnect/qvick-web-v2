@@ -72,6 +72,9 @@ export const Tbody = styled.tbody`
         gap: 100px;
         margin-left: 100px;
     }
+    #tdRed {
+        color: red;
+    }
 `;
 export const theadTr = styled.tr`
     width: 100%;
