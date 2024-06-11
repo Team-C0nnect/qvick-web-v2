@@ -18,10 +18,12 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "react-scripts": "5.0.1",
+    "recoil": "^0.7.7",
     "styled-components": "^6.1.8",
     "sweetalert2": "^11.10.8",
     "typescript": "^3.2.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "ts-loader": "^9.5.1"
   }
 }
