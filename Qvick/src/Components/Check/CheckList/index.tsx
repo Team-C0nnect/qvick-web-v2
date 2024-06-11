@@ -52,8 +52,8 @@ const CheckList = () => {
                 <S.Table>
                     <S.Tbody>
                         {Array.isArray(checkList) && checkList.length > 0 ? (
-                        checkList.map((item) => (
-                            <tr key={item.stdId}>
+                        checkList.map((item,index) => (
+                            <tr key={index}>
                                 <td>{item.stdId}</td>
                                 <td>{item.name}</td>
                                 <td>{item.room}호</td>
