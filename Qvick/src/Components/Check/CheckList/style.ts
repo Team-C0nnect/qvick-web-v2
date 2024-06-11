@@ -12,7 +12,7 @@ export const MainWrap = styled.div`
 `;
 export const ListWrap = styled.div`
     position: relative;
-    transform: translateX(0px) translateY(110px);
+    transform: translateX(0px) translateY(60px);
     width: 1400px;
     height: 670px;
     overflow-x: auto;
