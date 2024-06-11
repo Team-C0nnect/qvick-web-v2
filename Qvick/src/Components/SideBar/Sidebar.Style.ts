@@ -23,6 +23,7 @@ export const moveWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     gap: 17px;
     width: 155px;
     height: 55px;
