@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
+    "@types/react-datepicker": "^6.2.0",
     "ts-loader": "^9.5.1"
   }
 }
