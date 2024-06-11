@@ -6,12 +6,22 @@ import * as XLSX from 'xlsx';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
+import styled from "styled-components";
+
+const StyledDatePicker = styled(DatePicker)`
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+`;
 
 const CheckList = () => {
     const [checkList, setCheckList] = useState<ListType[]>([]);
-    const [filteredCheckList, setFilteredCheckList] = useState<ListType[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
+    const [filteredCheckList, setFilteredCheckList] = useState<ListType[]>([]);
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
     const fetchCheckList = async () => {
@@ -70,13 +80,13 @@ const CheckList = () => {
     return (
         <S.MainWrap>
             <S.Title>출석인원 관리</S.Title>
-            <DatePicker
+            <S.excelButton onClick={exportToExcel}>Excel</S.excelButton>
+            <StyledDatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
                 dateFormat="yyyy-MM-dd"
                 placeholderText="날짜를 선택하세요"
             />
-            <S.excelButton onClick={exportToExcel}>Excel</S.excelButton>
             <S.ListWrap>
                 <S.Thead>
                     <S.theadTr>
