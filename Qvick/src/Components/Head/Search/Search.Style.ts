@@ -36,6 +36,7 @@ export const serchIconLine = styled.div`
 `;    
 export const Search = styled.input`
     position: absolute;
+    width: 1000px;
     top: 27px;
     left: 300px;
     font-size: 20px;
@@ -44,19 +45,3 @@ export const Search = styled.input`
     border-right: #FFFFFF;
     border-bottom: #FFFFFF;
 `;
-export const ResultWrap = styled.div`
-`;
-export const User = styled.div`
-    position: absolute;
-    left: 1100px;
-    top: 30px;
-    font-size: 20px;
-`;
-export const UserCheck = styled.div`
-    position: absolute;
-    left: 1300px;
-    top: 13px;
-`;
-// export const SearchImg = styled.img`
-//   position: absolute;
-// `;
