@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import * as S from "src/Components/Member/MemberList/style"
 import { MemberType } from "src/types/Member/member.type";
 import { qvickV1Axios } from "src/libs/auth/CustomAxios";
-import axios from "axios";
-import CONFIG from "src/config/config.json";
-import CheckList from "@src/Components/Check/CheckList";
+import * as XLSX from 'xlsx';
 
 const MemberList = () => {
     const [memberList, setMemberList] = useState<MemberType[]>([]);
@@ -32,6 +30,13 @@ const MemberList = () => {
         fetchMemberList();
     },[]);
 
+    const exportToExcel = () => {
+        const worksheet = XLSX.utils.json_to_sheet(memberList);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
+        XLSX.writeFile(workbook, 'member_list.xlsx');
+    };
+
     if (isLoading) {
         return <p>Loading...</p>;
     }
@@ -42,6 +47,7 @@ const MemberList = () => {
      return (
         <S.MainWrap>
             <S.Title>구성원 관리</S.Title>
+            <S.excelButton onClick={exportToExcel}>Excel</S.excelButton>
             <S.ListWrap>
                 <S.Thead>
                     <S.theadTr>

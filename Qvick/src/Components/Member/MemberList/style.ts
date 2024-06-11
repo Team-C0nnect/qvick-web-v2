@@ -12,7 +12,7 @@ export const MainWrap = styled.div`
 `;
 export const ListWrap = styled.div`
     position: relative;
-    transform: translateX(0px) translateY(150px);
+    transform: translateX(0px) translateY(110px);
     width: 1400px;
     height: 670px;
     overflow-x: auto;
@@ -25,6 +25,16 @@ export const Title = styled.span`
     font-size: 25px;
     font-weight: 500;
     position: absolute;
+`;
+export const excelButton = styled.button`
+    background-color: #41C982;
+    color: #FFFFFF;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    transform: translateX(550px) translateY(50px);
+    ;
 `;
 export const Table = styled.table`  
     border: 1px #a39485 solid;
