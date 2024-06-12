@@ -28,8 +28,8 @@ const NotCheckList = () => {
         setError(null);
 
         try {
-            const response = await qvickV1Axios.get(`attendance/non-check`, {
-                params: { page: 1, size: 1000 },
+            const response = await qvickV1Axios.get(`user-admin/non-check`, {
+                params: { page: 1, size: 100 },
             });
             setNotCheckList(response.data);
             console.log("성공", response.data);

@@ -29,8 +29,8 @@ const CheckList = () => {
         setError(null);
 
         try {
-            const response = await qvickV1Axios.get(`attendance/check`, {
-                params: { page: 1, size: 1000 },
+            const response = await qvickV1Axios.get(`user-admin/check`, {
+                params: { page: 1, size: 10000 },
             });
             setCheckList(response.data);
             console.log("성공", response.data);
