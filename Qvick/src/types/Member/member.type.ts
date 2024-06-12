@@ -1,7 +1,7 @@
 export interface MemberType {
     "id": number,
     "userId": number,
-    "stdId": string,
+    "stdId": number,
     "name": string,
     "email": string,
     "room": string,
