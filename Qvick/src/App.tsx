@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/Head" element={<Head />} />
           <Route path="/Side" element={<Side />} />
           <Route path="/HeadLogo" element={<HeadLogo />} />

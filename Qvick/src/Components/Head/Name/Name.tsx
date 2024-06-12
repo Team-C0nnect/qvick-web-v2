@@ -9,7 +9,7 @@ export default function Name() {
             <S.Name>안영세님</S.Name>
             <S.logOut
                 onClick={() => {
-                    navigate("/login")
+                    navigate("/")
                 }}>
                 로그아웃
             </S.logOut>
