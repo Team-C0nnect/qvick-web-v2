@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import * as S from "src/Components/NotCheck/NotCheckList/style";
 import { notCheckListType } from "@src/types/notCheck/notCheck.types";
 import { qvickV1Axios } from "src/libs/auth/CustomAxios";
 import * as XLSX from 'xlsx';
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
 import styled from "styled-components";
+import 'src/Assets/Scss/notCheckList/style.scss';
 
 const StyledDatePicker = styled(DatePicker)`
     width: 200px;
@@ -76,26 +77,26 @@ const NotCheckList = () => {
     }
 
     return (
-        <S.MainWrap>
-            <S.Title>미출석 관리</S.Title>
-            <S.excelButton onClick={exportToExcel}>Excel</S.excelButton>
+        <div className="main-wrap">
+            <h1 className="title">미출석 관리</h1>
+            <button className="excel-button" onClick={exportToExcel}>Excel</button>
             <StyledDatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}
                 dateFormat="yyyy-MM-dd"
                 placeholderText="날짜를 선택하세요"
             />
-            <S.ListWrap>
-                <S.Thead>
-                    <S.theadTr>
+            <div className="list-wrap">
+                <thead className="thead">
+                    <tr className="thead-tr">
                         <th>학번</th>
                         <th>이름</th>
                         <th>기숙사</th>
                         <th>출석시간</th>
-                    </S.theadTr>
-                </S.Thead>
-                <S.Table>
-                    <S.Tbody>
+                    </tr>
+                </thead>
+                <table className="table">
+                    <tbody className="tbody">
                         {Array.isArray(filteredNotCheckList) && filteredNotCheckList.length > 0 ? (
                             filteredNotCheckList.map((item, index) => (
                                 <tr key={index}>
@@ -110,10 +111,10 @@ const NotCheckList = () => {
                                 <td colSpan={4}>데이터가 존재하지 않습니다.</td>
                             </tr>
                         )}
-                    </S.Tbody>
-                </S.Table>
-            </S.ListWrap>
-        </S.MainWrap>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     );
 };
 

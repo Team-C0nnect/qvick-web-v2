@@ -1,0 +1,108 @@
+$main-wrap-translate-x: 200px;
+$main-wrap-translate-y: -983px;
+
+$excel-button-translate-x: 550px;
+$excel-button-translate-y: 50px;
+
+$thead-tr-font-size: 18px;
+
+.main-wrap {
+  display: flex;
+  width: 1512px;
+  height: 100vh;
+  background-color: #eef2f4;
+  transform: translateX(#{$main-wrap-translate-x}) translateY(#{$main-wrap-translate-y});
+  flex-direction: column;
+  align-items: center;
+
+  .list-wrap {
+    position: relative;
+    transform: translateX(0px) translateY(60px);
+    width: 1400px;
+    height: 670px;
+    overflow-x: auto;
+  }
+
+  .title {
+    color: #2e335d;
+    transform: translateX(-550px) translateY(60px);
+    width: 220px;
+    height: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+  }
+
+  .excel-button {
+    background-color: #41c982;
+    color: #ffffff;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    transform: translateX(#{$excel-button-translate-x}) translateY(#{$excel-button-translate-y});
+  }
+
+  .thead {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    font-weight: bold;
+    color: #fff;
+    background: #343a47;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+
+    .thead-tr {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      font-size: $thead-tr-font-size;
+    }
+
+    .thead-th {
+      font-size: 0px;
+    }
+  }
+  
+  .table {
+    border: 1px #a39485 solid;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    width: 1400px;
+    border-collapse: collapse;
+    overflow: hidden;
+
+    .tbody {
+      overflow-x: auto;
+      overflow-y: hidden;
+      position: relative;
+      white-space: nowrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+      tr {
+        display: flex;
+        justify-content: space-evenly;
+        border-bottom: 1px solid #ddd;
+        height: 50px;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      td,
+      th {
+        padding: 15px;
+        font-size: 20px;
+      }
+
+      #tdRed {
+        color: red;
+      }
+    }
+  }
+}
