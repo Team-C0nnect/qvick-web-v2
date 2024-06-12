@@ -25,18 +25,20 @@ const NotCheckList = () => {
     const fetchNotCheckList = async () => {
         setIsLoading(true);
         setError(null);
-
+    
         try {
             const response = await qvickV1Axios.get(`user-admin/non-check`, {
                 params: { page: 1, size: 100 },
             });
-            const data = response.data.filter((item: notCheckListType) => !item.checked);
+            const data = response.data
+                .filter((item: notCheckListType) => !item.checked)
+                .sort((a: notCheckListType, b: notCheckListType) => a.stdId - b.stdId); // Sort by student ID
             setNotCheckList(data);
-            console.log("성공", data);
+            console.log("Success", data);
         } catch (error) {
             const axiosError = error as AxiosError;
             setError(axiosError);
-            console.error("실패", axiosError);
+            console.error("Failed", axiosError);
         } finally {
             setIsLoading(false);
         }
@@ -83,7 +85,7 @@ const NotCheckList = () => {
                                     <td>{item.stdId}</td>
                                     <td>{item.name}</td>
                                     <td>{item.room}호</td>
-                                    <td>{item.checked}</td>
+                                    {/* <td>{item.checked}</td> */}
                                     <td id="tdRed">미출석</td>
                                 </tr>
                             ))
