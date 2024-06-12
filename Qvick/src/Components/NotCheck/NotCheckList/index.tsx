@@ -21,8 +21,6 @@ const NotCheckList = () => {
     const [notCheckList, setNotCheckList] = useState<notCheckListType[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
-    const [filteredNotCheckList, setFilteredNotCheckList] = useState<notCheckListType[]>([]);
-    const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
     const fetchNotCheckList = async () => {
         setIsLoading(true);
@@ -32,10 +30,12 @@ const NotCheckList = () => {
             const response = await qvickV1Axios.get(`user-admin/non-check`, {
                 params: { page: 1, size: 100 },
             });
-            setNotCheckList(response.data);
-            console.log("성공", response.data);
+            const data = response.data.filter((item: notCheckListType) => !item.checked);
+            setNotCheckList(data);
+            console.log("성공", data);
         } catch (error) {
             const axiosError = error as AxiosError;
+            setError(axiosError);
             console.error("실패", axiosError);
         } finally {
             setIsLoading(false);
@@ -45,20 +45,6 @@ const NotCheckList = () => {
     useEffect(() => {
         fetchNotCheckList();
     }, []);
-
-    useEffect(() => {
-        if (selectedDate && notCheckList.length > 0) {
-            const formattedSelectedDate = selectedDate.toISOString().split('T')[0];
-            const filteredList = notCheckList.filter(
-                (item) => item.checkedDate && item.checkedDate.startsWith(formattedSelectedDate)
-            );
-            setFilteredNotCheckList(filteredList);
-        }
-    }, [selectedDate, notCheckList]);
-
-    const handleDateChange = (date: Date | null) => {
-        setSelectedDate(date);
-    };
 
     const exportToExcel = () => {
         const dataForExcel = notCheckList.map(({ stdId, name, room }) => ({ stdId, name, room }));
@@ -80,12 +66,6 @@ const NotCheckList = () => {
         <div className="main-wrap">
             <h1 className="title">미출석 관리</h1>
             <button className="excel-button" onClick={exportToExcel}>Excel</button>
-            <StyledDatePicker
-                selected={selectedDate}
-                onChange={handleDateChange}
-                dateFormat="yyyy-MM-dd"
-                placeholderText="날짜를 선택하세요"
-            />
             <div className="list-wrap">
                 <thead className="thead">
                     <tr className="thead-tr">
@@ -97,12 +77,13 @@ const NotCheckList = () => {
                 </thead>
                 <table className="table">
                     <tbody className="tbody">
-                        {Array.isArray(filteredNotCheckList) && filteredNotCheckList.length > 0 ? (
-                            filteredNotCheckList.map((item, index) => (
+                        {Array.isArray(notCheckList) && notCheckList.length > 0 ? (
+                            notCheckList.map((item, index) => (
                                 <tr key={index}>
                                     <td>{item.stdId}</td>
                                     <td>{item.name}</td>
                                     <td>{item.room}호</td>
+                                    <td>{item.checked}</td>
                                     <td id="tdRed">미출석</td>
                                 </tr>
                             ))

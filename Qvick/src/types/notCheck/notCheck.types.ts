@@ -1,6 +1,7 @@
 export interface notCheckListType {
-    "stdId": string,
+    "stdId": number,
     "name": string,
     "room": string,
-    "checkedDate": string
+    "checkedDate": string,
+    "checked": boolean
 }
