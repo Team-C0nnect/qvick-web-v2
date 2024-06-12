@@ -32,8 +32,9 @@ const CheckList = () => {
             const response = await qvickV1Axios.get(`user-admin/check`, {
                 params: { page: 1, size: 10000 },
             });
-            setCheckList(response.data);
-            console.log("성공", response.data);
+            const sortedData = response.data.sort((a: ListType, b: ListType) => a.stdId - b.stdId); // 학번 기준 정렬
+            setCheckList(sortedData);
+            console.log("성공", sortedData);
         } catch (error) {
             const axiosError = error as AxiosError;
             console.error("실패", axiosError);
