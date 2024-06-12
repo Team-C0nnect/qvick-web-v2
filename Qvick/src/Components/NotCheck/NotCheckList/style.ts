@@ -8,7 +8,6 @@ export const MainWrap = styled.div`
     transform: translateX(200px) translateY(-983px); 
     flex-direction: column;
     align-items: center;
-    /* position: fixed; */
 `;
 export const ListWrap = styled.div`
     position: relative;
@@ -41,7 +40,6 @@ export const Table = styled.table`
     box-shadow: 0 2px 5px rgba(0,0,0,.25);
     width: 1400px;
     border-collapse: collapse;
-    /* border-radius: 5px; */
     overflow: hidden;
 `;
 export const Thead = styled.thead`
@@ -60,6 +58,8 @@ export const Tbody = styled.tbody`
     overflow-y: hidden;
     position: relative;
     white-space: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
     tr {
         display: flex;  
         justify-content: space-evenly;
@@ -72,8 +72,6 @@ export const Tbody = styled.tbody`
     td, th {
         padding: 15px; 
         font-size: 20px; 
-        gap: 100px;
-        margin-left: 100px;
     }
     #tdRed {
         color: red;
@@ -84,10 +82,8 @@ export const theadTr = styled.tr`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 18px;
 `;
 export const theadTh = styled.th`
     font-size: 0px;
 `;
-// table {
-//     
-//   }

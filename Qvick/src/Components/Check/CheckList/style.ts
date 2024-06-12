@@ -8,7 +8,6 @@ export const MainWrap = styled.div`
     transform: translateX(200px) translateY(-983px); 
     flex-direction: column;
     align-items: center;
-    /* position: fixed; */
 `;
 export const ListWrap = styled.div`
     position: relative;
@@ -60,6 +59,8 @@ export const Tbody = styled.tbody`
     overflow-y: hidden;
     position: relative;
     white-space: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
     tr {
         display: flex;  
         justify-content: space-evenly;
@@ -81,10 +82,8 @@ export const theadTr = styled.tr`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 18px;
 `;
 export const theadTh = styled.th`
     font-size: 0px;
 `;
-// table {
-//     
-//   }
