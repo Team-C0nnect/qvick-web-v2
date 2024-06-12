@@ -3,7 +3,7 @@ export interface checkResponse extends Response {
 }
 
 export interface ListType {
-    "stdId": string,
+    "stdId": number,
     "name": string,
     "room": string,
     "checkedDate": string
