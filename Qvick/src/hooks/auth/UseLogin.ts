@@ -3,7 +3,7 @@ import { showToast } from "src/libs/toast/swal";
 import axios from "axios";
 import CONFIG from "src/config/config.json";
 import token from "src/libs/token/token";
-import { LoginRespones } from "src/types/login/login.type";
+import { LoginResponse } from "src/types/login/login.type";
 import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from "src/constants/tokens/token.constants";
 import { useNavigate } from "react-router-dom";
 
@@ -34,12 +34,12 @@ const Uselogin = () => {
             showToast("error", "아이디와 비밀번호를 입력해주세요.");
         } else {
             try {
-               await axios.post<LoginRespones>(`${CONFIG.serverUrl}auth/sign-in`,{
+               await axios.post<LoginResponse>(`${CONFIG.serverUrl}auth/sign-in`,{
                 email: idValue,
                 password: passwordValue
                }).then((res) => {
-                        token.setToken(ACCESS_TOKEN_KEY, res.data.accessToken);
-                        token.setToken(REFRESH_TOKEN_KEY, res.data.refreshToken);
+                        token.setToken(ACCESS_TOKEN_KEY, res.data.data.accessToken);
+                        token.setToken(REFRESH_TOKEN_KEY, res.data.data.refreshToken);
                         showToast("success", "로그인 성공");
                         navigate("/main");
                     });
