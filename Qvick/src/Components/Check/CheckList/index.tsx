@@ -32,8 +32,9 @@ const CheckList = () => {
             const response = await qvickV1Axios.get(`user-admin/check`, {
                 params: { page: 1, size: 10000 },
             });
-            const sortedData = response.data.sort((a: ListType, b: ListType) => a.stdId - b.stdId); // 학번 기준 정렬
-            setCheckList(sortedData);
+
+            const sortedData = response.data.data.sort((a: ListType['data'], b: ListType['data']) => parseInt(a.stdId) - parseInt(b.stdId)); // 학번 기준 정렬
+            setCheckList(sortedData.map((item: ListType['data']) => ({ data: item })));
             console.log("성공", sortedData);
         } catch (error) {
             const axiosError = error as AxiosError;
@@ -52,7 +53,7 @@ const CheckList = () => {
         if (selectedDate && checkList.length > 0) {
             const formattedSelectedDate = selectedDate.toISOString().split('T')[0];
             const filteredList = checkList.filter((item) =>
-                item.checkedDate.startsWith(formattedSelectedDate)
+                item.data.checkedDate.startsWith(formattedSelectedDate)
             );
             setFilteredCheckList(filteredList);
         }
@@ -63,7 +64,7 @@ const CheckList = () => {
     };
 
     const exportToExcel = () => {
-        const dataForExcel = filteredCheckList.map(({ stdId, name, room, checkedDate }) => ({ stdId, name, room, checkedDate }));
+        const dataForExcel = filteredCheckList.map(({ data: { stdId, name, room, checkedDate, checked } }) => ({ stdId, name, room, checkedDate, checked }));
         const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
@@ -102,15 +103,15 @@ const CheckList = () => {
                         {Array.isArray(filteredCheckList) && filteredCheckList.length > 0 ? (
                             filteredCheckList.map((item, index) => (
                                 <tr key={index}>
-                                    <td>{item.stdId}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.room}호</td>
-                                    <td>{new Date(item.checkedDate).toLocaleTimeString()}</td>
+                                    <td>{item.data.stdId}</td>
+                                    <td>{item.data.name}</td>
+                                    <td>{item.data.room}호</td>
+                                    <td>{new Date(item.data.checkedDate).toLocaleTimeString()}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan={4}>데이터가 존재하지 않습니다</td>
+                                <td colSpan={5}>데이터가 존재하지 않습니다</td>
                             </tr>
                         )}
                     </tbody>
