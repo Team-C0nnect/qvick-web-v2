@@ -1,12 +1,9 @@
-export interface Response {
-    status: number;
-    message: string;
-  }
-  
-  export interface LoginResponse extends Response {
+import { Response } from "src/types/util/response.type";
+
+export interface LoginResponse extends Response {
     data: {
       accessToken: string;
       refreshToken: string;
     };
-  }
+}
   

@@ -1,9 +1,9 @@
-export interface MemberType {
-    "id": number,
-    "userId": number,
-    "stdId": number,
-    "name": string,
-    "email": string,
-    "room": string,
-    "checkedDate": Date
+import { Response } from "src/types/util/response.type";
+
+export interface MemberType extends Response {
+    data: {
+        name: "string",
+        stdId: "number",
+        room: "string",
+    }
 }

@@ -1,10 +1,11 @@
-export interface checkResponse extends Response {
-    data: ListType[];
-}
+import { Response } from "src/types/util/response.type";
 
-export interface ListType {
-    "stdId": number,
-    "name": string,
-    "room": string,
-    "checkedDate": string
+export interface ListType extends Response {
+    data: {
+        name: "string",
+        stdId: "number",
+        room: "string",
+        checkedDate: string,
+        checked: boolean
+    }
 }
