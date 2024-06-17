@@ -20,7 +20,7 @@ const MemberList = () => {
             });
 
             const data = response.data.data; // 응답 데이터에서 실제 데이터를 추출
-            const sortedData = data.sort((a: MemberType['data'], b: MemberType['data']) => parseInt(a.stdId) - parseInt(b.stdId)); // 학번 기준 정렬
+            const sortedData = data.sort((a: MemberType['data'], b: MemberType['data']) => Number(a.stdId) - Number(b.stdId)); // 학번 기준 정렬
             setMemberList(sortedData); // 정렬된 데이터를 상태로 설정
             console.log("성공");
         } catch (error) {
