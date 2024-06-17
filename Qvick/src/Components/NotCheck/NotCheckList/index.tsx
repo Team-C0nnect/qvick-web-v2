@@ -1,24 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { notCheckListType } from "@src/types/notCheck/notCheck.types";
+import { notCheckListItem, notCheckListResponse } from "@src/types/notCheck/notCheck.types";
 import { qvickV1Axios } from "src/libs/auth/CustomAxios";
 import * as XLSX from 'xlsx';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
-import styled from "styled-components";
 import 'src/Assets/Scss/notCheckList/style.scss';
 
-const StyledDatePicker = styled(DatePicker)`
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-`;
-
 const NotCheckList = () => {
-    const [notCheckList, setNotCheckList] = useState<notCheckListType[]>([]);
+    const [notCheckList, setNotCheckList] = useState<notCheckListItem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
 
@@ -27,12 +16,12 @@ const NotCheckList = () => {
         setError(null);
     
         try {
-            const response = await qvickV1Axios.get(`user-admin/non-check`, {
+            const response = await qvickV1Axios.get<notCheckListResponse>(`user-admin/non-check`, {
                 params: { page: 1, size: 100 },
             });
-            const data = response.data
-                .filter((item: notCheckListType) => !item.checked)
-                .sort((a: notCheckListType, b: notCheckListType) => a.stdId - b.stdId); // Sort by student ID
+            const data = response.data.data
+                .filter((item: notCheckListItem) => !item.checked)
+                .sort((a: notCheckListItem, b: notCheckListItem) => a.stdId - b.stdId);
             setNotCheckList(data);
             console.log("Success", data);
         } catch (error) {
@@ -69,15 +58,15 @@ const NotCheckList = () => {
             <h1 className="title">미출석 관리</h1>
             <button className="excel-button" onClick={exportToExcel}>Excel</button>
             <div className="list-wrap">
-                <thead className="thead">
-                    <tr className="thead-tr">
-                        <th>학번</th>
-                        <th>이름</th>
-                        <th>기숙사</th>
-                        <th>출석시간</th>
-                    </tr>
-                </thead>
                 <table className="table">
+                    <thead className="thead">
+                        <tr className="thead-tr">
+                            <th>학번</th>
+                            <th>이름</th>
+                            <th>기숙사</th>
+                            <th>출석시간</th>
+                        </tr>
+                    </thead>
                     <tbody className="tbody">
                         {Array.isArray(notCheckList) && notCheckList.length > 0 ? (
                             notCheckList.map((item, index) => (
@@ -85,7 +74,6 @@ const NotCheckList = () => {
                                     <td>{item.stdId}</td>
                                     <td>{item.name}</td>
                                     <td>{item.room}호</td>
-                                    {/* <td>{item.checked}</td> */}
                                     <td id="tdRed">미출석</td>
                                 </tr>
                             ))

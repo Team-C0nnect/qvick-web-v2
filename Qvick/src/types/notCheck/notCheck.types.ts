@@ -1,10 +1,12 @@
 import { Response } from "src/types/util/response.type";
 
-export interface notCheckListType extends Response {
-    data: {
-        name: string,
-        stdId: string,
-        room: string,
-        checked: boolean
-    }
+export interface notCheckListItem {
+    stdId: number;
+    name: string;
+    room: string;
+    checked: boolean;
+}
+
+export interface notCheckListResponse extends Response {
+    data: notCheckListItem[];
 }
