@@ -25,7 +25,6 @@ export default function Search() {
         if (e.key === 'Enter') {
             try {
                 // 사용자 정보 조회
-                const userResponse = await axios.get<User[]>(`${url}/users?name=${searchTerm}`);
                 const userData = userResponse.data[0]; // 가정: 첫 번째로 검색된 사용자를 선택
 
                 // 출석 정보 조회
