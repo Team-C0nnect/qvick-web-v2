@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Title from "src/assets/images/head/logo.png";
 import * as s from "src/components/login/Style";
-import Uselogin from "src/hooks/auth/useLogin";
+import UseLogin from "src/hooks/auth/useLogin";
 
 export default function Login() {
-  const { idValue, passwordValue, InputChange, InputChangePw, LoginButton } = Uselogin();
+  const { idValue, passwordValue, InputChange, InputChangePw, LoginButton } = UseLogin();
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true);

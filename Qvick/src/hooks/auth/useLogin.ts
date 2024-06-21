@@ -8,7 +8,7 @@ import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from "src/constants/tokens/token.
 import { useNavigate } from "react-router-dom";
 
 
-const Uselogin = () => {
+const UseLogin = () => {
     const navigate = useNavigate();
     const [clickName, setClickName] = useState<string>("");
     const [idValue, setIdValue] = useState<string>("");
@@ -64,4 +64,4 @@ const Uselogin = () => {
         InputChangePw,
     }
 }
-export default Uselogin;
+export default UseLogin;
