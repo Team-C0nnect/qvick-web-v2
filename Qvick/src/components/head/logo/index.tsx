@@ -1,5 +1,5 @@
-import * as S from "src/Components/Head/Logo/Logo.Style"
-import AppLogo from "src/Assets/images/Head/appLogo.png"
+import * as S from "src/components/head/logo/Logo.Style"
+import AppLogo from "src/assets/images/head/appLogo.png"
 
 export default function Logo() {
     return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Title from "src/Assets/images/Head/logo.png";
-import * as s from "src/Components/Login/Style";
-import Uselogin from "src/hooks/auth/UseLogin";
+import Title from "src/assets/images/head/logo.png";
+import * as s from "src/components/login/Style";
+import Uselogin from "src/hooks/auth/useLogin";
 
 export default function Login() {
   const { idValue, passwordValue, InputChange, InputChangePw, LoginButton } = Uselogin();

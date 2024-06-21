@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { MemberType } from "src/types/Member/member.type";
+import { MemberType } from "src/types/member/member.type";
 import { qvickV1Axios } from "src/libs/auth/CustomAxios";
 import { AxiosError } from 'axios';
 import * as XLSX from 'xlsx';
-import "src/Assets/Scss/memberList/style.scss";
+import "src/assets/scss/memberList/style.scss";
 
 const MemberList = () => {
     const [memberList, setMemberList] = useState<MemberType['data'][]>([]); // 멤버 리스트 상태

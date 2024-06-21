@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from "src/Components/Login/Login";
-import Head from "src/Components/Head/Head/Head";
-import Side from "src/Components/SideBar/Sidebar";
-import HeadLogo from "src/Components/Head/Logo/Logo";
-import HeadName from "src/Components/Head/Name/Name";
-import Member from "src/Components/Member/Member";
-import Check from "src/Components/Check/Check";
-import NotCheck from "src/Components/NotCheck/NotCheck";
-import OutMember from "src/Components/OutMember/OutMember";
-import HomeMember from "src/Components/HomeMember/HomeMember";
-import MemberList from 'src/Components/Member/MemberList/index';
-import NotCheckList from 'src/Components/NotCheck/NotCheckList/index';
-import CheckList from 'src/Components/Check/CheckList/index';
+import Login from "src/components/login/index";
+import Head from "src/components/head/index";
+import Side from "src/components/sideBar/index";
+import HeadLogo from "src/components/head/logo/index";
+import HeadName from "src/components/head/name/index";
+import Member from "src/components/member/index";
+import Check from "src/components/check/index";
+import NotCheck from "src/components/notCheck/index";
+import OutMember from "src/components/OutMember/OutMember";
+import HomeMember from "src/components/HomeMember/HomeMember";
+import MemberList from "src/components/member/memberList/index";
+import NotCheckList from 'src/components/notCheck/notCheckList/index';
+import CheckList from "src/components/check/checkList/index";
 import "./styles/global.css"
 
 function App() {

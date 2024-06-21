@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import * as S from "src/Components/Head/Name/Name.Style"
+import * as S from "src/components/head/name/Name.Style"
 
 export default function Name() {
     const navigate = useNavigate();

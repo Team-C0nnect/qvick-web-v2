@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
 import styled from "styled-components";
-import 'src/Assets/Scss/checkList/style.scss';
+import 'src/assets/scss/checkList/style.scss';
 
 const StyledDatePicker = styled(DatePicker)`
     width: 200px;

@@ -4,7 +4,7 @@ import { qvickV1Axios } from "src/libs/auth/CustomAxios";
 import * as XLSX from 'xlsx';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
-import 'src/Assets/Scss/notCheckList/style.scss';
+import 'src/assets/scss/notCheckList/style.scss';
 
 const NotCheckList = () => {
     const [notCheckList, setNotCheckList] = useState<notCheckListItem[]>([]);
