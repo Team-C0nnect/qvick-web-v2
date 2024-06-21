@@ -1,5 +1,8 @@
-export interface search {
-    "name": string,
-    "stdId": string,
-    "room": string,
+export interface User {
+    id: number;
+    name: string;
+    email: string;
+    approval: string;
+    userRole: string;
+    checked: boolean;
 }
