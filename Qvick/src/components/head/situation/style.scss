@@ -1,0 +1,31 @@
+.container {
+    width: 1250px;
+    border-bottom: 1px solid #D9D9D9;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.display {
+    font-size: 1.5em;
+    color: #333;
+    margin: 30px;
+}
+
+.checkText {
+    color: black;
+}
+
+.checkNumber {
+    color: #41C982;
+}
+
+.notCheckText {
+    color: black;
+}
+
+.notCheckNumber {
+    color: #FF0000;
+}
