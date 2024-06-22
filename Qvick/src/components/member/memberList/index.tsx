@@ -9,6 +9,7 @@ const MemberList = () => {
     const [memberList, setMemberList] = useState<MemberType['data'][]>([]); // 멤버 리스트 상태
     const [isLoading, setIsLoading] = useState(true); // 로딩 상태
     const [error, setError] = useState<Error | null>(null); // 에러 상태
+    const [searchTerm, setSearchTerm] = useState(''); // 검색어 상태
 
     // 멤버 리스트를 서버에서 가져오는 함수
     const fetchMemberList = async () => {
@@ -46,8 +47,16 @@ const MemberList = () => {
         XLSX.writeFile(workbook, '전체인원.xlsx'); // 엑셀 파일 이름 설정
     };
 
-    // useMemo를 사용하여 memberList가 변경될 때만 sortedMemberList를 업데이트
-    const sortedMemberList = useMemo(() => memberList, [memberList]);
+    // useMemo를 사용하여 memberList가 변경될 때만 filteredList 및 sortedMemberList를 업데이트
+    const filteredList = useMemo(() => {
+        return memberList.filter(member =>
+            member.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            member.stdId.includes(searchTerm) ||
+            member.room.includes(searchTerm)
+        );
+    }, [memberList, searchTerm]);
+
+    const sortedMemberList = useMemo(() => filteredList, [filteredList]);
 
     // 로딩 상태일 때 표시할 내용
     if (isLoading) {
@@ -62,6 +71,12 @@ const MemberList = () => {
     return (
         <div className="main-wrap">
             <span className="title">구성원 관리</span>
+            <input
+                type="text"
+                placeholder="학번 또는 이름을 입력해주세요."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+            />
             <button className="excel-button" onClick={exportToExcel}>Excel</button>
             <div className="list-wrap">
                 <Table data={sortedMemberList} />
@@ -92,7 +107,7 @@ const Table = ({ data }: { data: MemberType['data'][] }) => (
                     ))
                 ) : (
                     <tr>
-                        <td colSpan={3}>No items to display</td>
+                        <td colSpan={3}>데이터가 존재하지 않습니다.</td>
                     </tr>
                 )}
             </tbody>
@@ -101,3 +116,4 @@ const Table = ({ data }: { data: MemberType['data'][] }) => (
 );
 
 export default MemberList;
+

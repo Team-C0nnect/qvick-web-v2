@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import { notCheckListItem, notCheckListResponse } from "@src/types/notCheck/notCheck.types";
 import { qvickV1Axios } from "src/libs/auth/CustomAxios";
 import * as XLSX from 'xlsx';
-import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
+import 'react-datepicker/dist/react-datepicker.css';
 import 'src/assets/scss/notCheckList/style.scss';
 
 const NotCheckList = () => {
     const [notCheckList, setNotCheckList] = useState<notCheckListItem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
+    const [absentCount, setAbsentCount] = useState(0); // 미출석 인원수 상태 추가
 
     const fetchNotCheckList = async () => {
         setIsLoading(true);
@@ -23,6 +24,7 @@ const NotCheckList = () => {
                 .filter((item: notCheckListItem) => !item.checked)
                 .sort((a: notCheckListItem, b: notCheckListItem) => a.stdId - b.stdId);
             setNotCheckList(data);
+            setAbsentCount(data.length); // 미출석 인원수 설정
             console.log("Success", data);
         } catch (error) {
             const axiosError = error as AxiosError;
@@ -57,6 +59,9 @@ const NotCheckList = () => {
         <div className="main-wrap">
             <h1 className="title">미출석 관리</h1>
             <button className="excel-button" onClick={exportToExcel}>Excel</button>
+            <div className="count-display">
+                <span>미출석 인원수: {absentCount}명</span> {/* 미출석 인원수 표시 */}
+            </div>
             <div className="list-wrap">
                 <table className="table">
                     <thead className="thead">

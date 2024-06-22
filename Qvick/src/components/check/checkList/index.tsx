@@ -7,6 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { AxiosError } from 'axios';
 import styled from "styled-components";
 import 'src/assets/scss/checkList/style.scss';
+import { useNavigate } from "react-router-dom";
 
 const StyledDatePicker = styled(DatePicker)`
     width: 200px;
@@ -23,6 +24,7 @@ const CheckList = () => {
     const [error, setError] = useState<Error | null>(null);
     const [filteredCheckList, setFilteredCheckList] = useState<ListType[]>([]);
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+    const navigate = useNavigate();
 
     const fetchCheckList = async () => {
         setIsLoading(true);
@@ -78,6 +80,8 @@ const CheckList = () => {
     if (error) {
         return <p>Error loading data: {(error as AxiosError).message}</p>;
     }
+
+    const attendanceCount = filteredCheckList.length;
 
     return (
         <div className="main-wrap">
