@@ -5,5 +5,6 @@ export interface MemberType extends Response {
         name: string,
         stdId: string,
         room: string,
+        email: string
     }
 }
