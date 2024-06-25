@@ -15,7 +15,6 @@ import "./styles/global.css"
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/Head" element={<Head />} />
@@ -29,7 +28,6 @@ function App() {
           <Route path='NotCheckList' element={<NotCheckList />} />
           <Route path='CheckList' element={<CheckList />} />
         </Routes>
-      </div>
     </BrowserRouter>
   );
 }

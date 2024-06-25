@@ -59,9 +59,6 @@ const NotCheckList = () => {
         <div className="main-wrap">
             <h1 className="title">미출석 관리</h1>
             <button className="excel-button" onClick={exportToExcel}>Excel</button>
-            <div className="count-display">
-                <span>미출석 인원수: {absentCount}명</span> {/* 미출석 인원수 표시 */}
-            </div>
             <div className="list-wrap">
                 <table className="table">
                     <thead className="thead">

@@ -5,7 +5,6 @@ import {
     REQUEST_TOKEN_KEY,
 } from "src/constants/tokens/token.constants";
 import token from "src/libs/token/token";
-// import ResponseHandler from "src/libs/auth/responseHandler";
 import RequestHandler from "src/libs/auth/requestHandler";
 import { requestHandler } from "../axios/requestHandler";
 

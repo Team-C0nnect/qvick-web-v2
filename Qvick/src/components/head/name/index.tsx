@@ -6,7 +6,7 @@ export default function Name() {
     const navigate = useNavigate();
     return(
         <S.NameWrap>
-            <S.Name>안영세님</S.Name>
+            <S.Name>관리자님</S.Name>
             <S.logOut
                 onClick={() => {
                     navigate("/")
