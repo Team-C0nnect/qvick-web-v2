@@ -15,6 +15,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
+    "tsx": "typescript-tsx",
     "paths": {
       "@src/*": ["src/*"]
     },

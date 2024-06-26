@@ -19,11 +19,12 @@ const StyledDatePicker = styled(DatePicker)`
 `;
 
 const CheckList = () => {
-    const [checkList, setCheckList] = useState<ListType[]>([]);
+    const [checkList, setCheckList] = useState<ListType['data'][]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
-    const [filteredCheckList, setFilteredCheckList] = useState<ListType[]>([]);
+    const [filteredCheckList, setFilteredCheckList] = useState<ListType['data'][]>([]);
     const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+    const [searchTerm, setSearchTerm] = useState<string>('');
     const navigate = useNavigate();
 
     const fetchCheckList = async () => {
@@ -32,12 +33,16 @@ const CheckList = () => {
 
         try {
             const response = await qvickV1Axios.get(`user-admin/check`, {
-                params: { page: 1, size: 10000 },
+                params: { page: 1, size: 1000 },
             });
 
-            const sortedData = response.data.data.sort((a: ListType['data'], b: ListType['data']) => parseInt(a.stdId) - parseInt(b.stdId)); // 학번 기준 정렬
-            setCheckList(sortedData.map((item: ListType['data']) => ({ data: item })));
-            console.log("성공", sortedData);
+            if (response.data && response.data.data) {
+                const sortedData = response.data.data.sort((a: ListType['data'], b: ListType['data']) => parseInt(a.stdId) - parseInt(b.stdId)); // 학번 기준 정렬
+                setCheckList(sortedData);
+                console.log("성공", sortedData);
+            } else {
+                throw new Error("Unexpected response structure");
+            }
         } catch (error) {
             const axiosError = error as AxiosError;
             console.error("실패", axiosError);
@@ -52,21 +57,41 @@ const CheckList = () => {
     }, []);
 
     useEffect(() => {
-        if (selectedDate && checkList.length > 0) {
-            const formattedSelectedDate = selectedDate.toISOString().split('T')[0];
-            const filteredList = checkList.filter((item) =>
-                item.data.checkedDate.startsWith(formattedSelectedDate)
-            );
+        const applyFilters = () => {
+            let filteredList = checkList;
+
+            if (selectedDate) {
+                const formattedSelectedDate = selectedDate.toISOString().split('T')[0];
+                filteredList = filteredList.filter((item) =>
+                    item.checkedDate.startsWith(formattedSelectedDate)
+                );
+            }
+
+            if (searchTerm) {
+                const lowerCaseSearchTerm = searchTerm.toLowerCase();
+                filteredList = filteredList.filter((item) =>
+                    item.name.toLowerCase().includes(lowerCaseSearchTerm) ||
+                    item.stdId.toLowerCase().includes(lowerCaseSearchTerm) ||
+                    item.room.toLowerCase().includes(lowerCaseSearchTerm)
+                );
+            }
+
             setFilteredCheckList(filteredList);
-        }
-    }, [selectedDate, checkList]);
+        };
+
+        applyFilters();
+    }, [selectedDate, searchTerm, checkList]);
 
     const handleDateChange = (date: Date | null) => {
         setSelectedDate(date);
     };
 
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(event.target.value);
+    };
+
     const exportToExcel = () => {
-        const dataForExcel = filteredCheckList.map(({ data: { stdId, name, room, checkedDate, checked } }) => ({ stdId, name, room, checkedDate, checked }));
+        const dataForExcel = filteredCheckList.map(({ stdId, name, room, checkedDate, checked }) => ({ stdId, name, room, checkedDate, checked }));
         const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
@@ -93,31 +118,38 @@ const CheckList = () => {
                 dateFormat="yyyy-MM-dd"
                 placeholderText="날짜를 선택하세요"
             />
+            <input
+                type="text"
+                placeholder="검색 (이름 또는 학번)"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                className="search-input"
+            />
             <div className="list-wrap">
-                <thead className="thead">
+                <table className="table">
+                    <thead className="thead">
                     <tr className="thead-tr">
                         <th>학번</th>
                         <th>이름</th>
                         <th>기숙사</th>
                         <th>출석시간</th>
                     </tr>
-                </thead>
-                <table className="table">
+                    </thead>
                     <tbody className="tbody">
-                        {Array.isArray(filteredCheckList) && filteredCheckList.length > 0 ? (
-                            filteredCheckList.map((item, index) => (
-                                <tr key={index}>
-                                    <td>{item.data.stdId}</td>
-                                    <td>{item.data.name}</td>
-                                    <td>{item.data.room}호</td>
-                                    <td>{new Date(item.data.checkedDate).toLocaleTimeString()}</td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan={5}>데이터가 존재하지 않습니다</td>
+                    {Array.isArray(filteredCheckList) && filteredCheckList.length > 0 ? (
+                        filteredCheckList.map((item, index) => (
+                            <tr key={index}>
+                                <td>{item.stdId}</td>
+                                <td>{item.name}</td>
+                                <td>{item.room}호</td>
+                                <td>{new Date(item.checkedDate).toLocaleTimeString()}</td>
                             </tr>
-                        )}
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={4}>데이터가 존재하지 않습니다</td>
+                        </tr>
+                    )}
                     </tbody>
                 </table>
             </div>

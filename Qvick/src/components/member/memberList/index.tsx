@@ -73,7 +73,7 @@ const MemberList = () => {
             <span className="title">구성원 관리</span>
             <input
                 type="text"
-                placeholder="학번 또는 이름을 입력해주세요."
+                placeholder="검색 (이름 또는 학번)"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
