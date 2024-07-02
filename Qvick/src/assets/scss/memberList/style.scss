@@ -69,13 +69,15 @@ $thead-tr-font-size: 18px;
       justify-content: space-evenly;
       align-items: center;
       font-size: $thead-tr-font-size;
+      position: sticky;
     }
 
     .thead-th {
       padding: 15px;
-        font-size: 20px;
-        width: 50px; 
-        text-align: center; 
+      font-size: 20px;
+      width: 50px;
+      text-align: center;
+      position: sticky;
     }
   }
 
