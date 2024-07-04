@@ -24,8 +24,8 @@
     justify-content: center;
     cursor: pointer;
     gap: 17px;
-    width: 155px;
-    height: 55px;
+    width: 170px;
+    height: 60px;
     background-color: #314162;
     border-left: 3px solid #41C982;
     line-height: 60px;
@@ -35,17 +35,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70px;
+    width: 80px;
     text-align: center;
 }
 
 .moveWrap img {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 /* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 1200px) {
+    .sideWrap {
+        width: 200px;
+    }
+
+    .sideM {
+        width: 200px;
+    }
+
+    .moveWrap {
+        width: 155px;
+        height: 55px;
+    }
+
+    .moveWrap span {
+        width: 70px;
+    }
+
+    .moveWrap img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 992px) {
     .sideWrap {
         width: 180px;
     }
@@ -69,7 +93,7 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .sideWrap {
         width: 160px;
     }
@@ -93,7 +117,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     .sideWrap {
         width: 140px;
     }
@@ -114,29 +138,5 @@
     .moveWrap img {
         width: 18px;
         height: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .sideWrap {
-        width: 120px;
-    }
-
-    .sideM {
-        width: 120px;
-    }
-
-    .moveWrap {
-        width: 90px;
-        height: 35px;
-    }
-
-    .moveWrap span {
-        width: 35px;
-    }
-
-    .moveWrap img {
-        width: 15px;
-        height: 15px;
     }
 }
