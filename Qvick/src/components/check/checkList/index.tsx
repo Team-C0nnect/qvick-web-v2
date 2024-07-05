@@ -126,15 +126,15 @@ const CheckList = () => {
                 className="search-input"
             />
             <div className="list-wrap">
+                <thead className="thead">
+                <tr className="thead-tr">
+                    <th>학번</th>
+                    <th>이름</th>
+                    <th>기숙사</th>
+                    <th>출석시간</th>
+                </tr>
+                </thead>
                 <table className="table">
-                    <thead className="thead">
-                    <tr className="thead-tr">
-                        <th>학번</th>
-                        <th>이름</th>
-                        <th>기숙사</th>
-                        <th>출석시간</th>
-                    </tr>
-                    </thead>
                     <tbody className="tbody">
                     {Array.isArray(filteredCheckList) && filteredCheckList.length > 0 ? (
                         filteredCheckList.map((item, index) => (
