@@ -6,7 +6,8 @@ import {
 } from "src/constants/tokens/token.constants";
 import token from "src/libs/token/token";
 import RequestHandler from "src/libs/auth/requestHandler";
-import { requestHandler } from "../axios/requestHandler";
+import ResponseHandler from "src/libs/auth/responseHandler";
+import { requestHandler } from '../axios/requestHandler';
 
 const createAxiosInstance = (config: AxiosRequestConfig) => {
     const ACCESS_TOKEN = token.getToken(ACCESS_TOKEN_KEY);
@@ -33,4 +34,4 @@ export const qvickV1AxiosSetAccessToken = (newToken: string) => {
 };
 
 qvickV1Axios.interceptors.request.use(requestHandler as any, (response) => response);
-qvickV1Axios.interceptors.response.use((response) => response, RequestHandler);
+qvickV1Axios.interceptors.response.use((response) => response, ResponseHandler);
