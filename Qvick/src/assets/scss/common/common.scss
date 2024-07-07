@@ -8,12 +8,24 @@ $thead-tr-font-size: 18px;
 
 .main-wrap {
   display: flex;
-  width: 1512px;
+  width: calc(100% - 200px); 
   height: 100vh;
   background-color: #eef2f4;
   transform: translateX(#{$main-wrap-translate-x}) translateY(#{$main-wrap-translate-y});
   flex-direction: column;
   align-items: center;
+  margin-left: 200px;
+  @media (max-width: 1980px) {
+    transform: translateX(0) translateY(0);
+  }
+  @media (max-width: 768px) {
+    width: calc(100% - 160px);
+    margin-left: 160px;
+  }
+  @media (max-width: 576px) {
+    width: calc(100% - 140px);
+    margin-left: 140px;
+  }
 }
 
 .excel-button {
@@ -24,6 +36,9 @@ $thead-tr-font-size: 18px;
   height: 50px;
   border-radius: 10px;
   transform: translateX(#{$excel-button-translate-x}) translateY(#{$excel-button-translate-y});
+  @media (max-width: 1980px) {
+    transform: translateX(0) translateY(0);
+  }
 }
 
 .thead {
@@ -59,7 +74,8 @@ $thead-tr-font-size: 18px;
   border: 1px #a39485 solid;
   font-size: 0.9em;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   border-collapse: collapse;
   overflow: hidden;
 

@@ -3,10 +3,11 @@
     width: 200px;
     height: 100vh;
     background-color: #343A47;
+    position: fixed;
 }
 
 .sideM {
-    width: 200px;
+    width: 100%;
     height: 100vh;
     margin-top: 40px;
     display: flex;
@@ -44,7 +45,7 @@
     height: 35px;
 }
 
-/* 반응형 디자인을 위한 미디어 쿼리 */
+
 @media (max-width: 1200px) {
     .sideWrap {
         width: 200px;
