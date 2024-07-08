@@ -8,7 +8,7 @@ $thead-tr-font-size: 18px;
 
 .main-wrap {
   display: flex;
-  width: calc(100% - 200px); 
+  width: calc(100% - 200px);
   height: 100vh;
   background-color: #eef2f4;
   transform: translateX(#{$main-wrap-translate-x}) translateY(#{$main-wrap-translate-y});
@@ -36,6 +36,8 @@ $thead-tr-font-size: 18px;
   height: 50px;
   border-radius: 10px;
   transform: translateX(#{$excel-button-translate-x}) translateY(#{$excel-button-translate-y});
+  margin-top: 30px;
+  margin-right: -1200px;
   @media (max-width: 1980px) {
     transform: translateX(0) translateY(0);
   }
