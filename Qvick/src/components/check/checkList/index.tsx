@@ -111,7 +111,7 @@ const CheckList = () => {
     return (
         <div className="main-wrap">
             <h1 className="title">출석인원 관리</h1>
-            <button className="excel-button" onClick={exportToExcel}>Excel</button>
+            <button className="excel-buttons" onClick={exportToExcel}>Excel</button>
             <StyledDatePicker
                 selected={selectedDate}
                 onChange={handleDateChange}

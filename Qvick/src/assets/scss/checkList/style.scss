@@ -1,4 +1,103 @@
-@import "src/assets/scss/common/common.scss";
+$main-wrap-translate-x: 200px;
+$main-wrap-translate-y: -983px;
+
+$excel-button-translate-x: 600px;
+$excel-button-translate-y: 95px;
+
+$thead-tr-font-size: 18px;
+
+.main-wrap {
+  display: flex;
+  width: calc(100% - 200px);
+  height: 100vh;
+  background-color: #eef2f4;
+  transform: translateX($main-wrap-translate-x) translateY($main-wrap-translate-y);
+  flex-direction: column;
+  align-items: center;
+  margin-left: 200px;
+  @media (max-width: 1980px) {
+    transform: translateX(0) translateY(0);
+  }
+  @media (max-width: 768px) {
+    width: calc(100% - 160px);
+    margin-left: 160px;
+  }
+  @media (max-width: 576px) {
+    width: calc(100% - 140px);
+    margin-left: 140px;
+  }
+}
+
+.thead {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  font-weight: bold;
+  color: #fff;
+  background: #343a47;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+
+  .thead-tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: $thead-tr-font-size;
+    position: sticky;
+  }
+
+  .thead-th {
+    padding: 15px;
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    position: sticky;
+  }
+}
+
+.table {
+  border: 1px #a39485 solid;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 1400px;
+  border-collapse: collapse;
+  overflow: hidden;
+
+  .tbody {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    tr {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid #ddd;
+      height: 50px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    td,
+    th {
+      padding: 15px;
+      font-size: 20px;
+      width: 50px;
+      text-align: center;
+    }
+
+    #tdRed {
+      color: red;
+    }
+  }
+}
 
 .main-wrap {
   input[type="text"] {
@@ -8,6 +107,17 @@
     border-radius: 5px;
     transform: translateX(-500px) translateY(100px);
     font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .excel-buttons {
+    background-color: #41c982;
+    color: #ffffff;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    transform: translateX($excel-button-translate-x) translateY($excel-button-translate-y);
   }
 
   .list-wrap {
