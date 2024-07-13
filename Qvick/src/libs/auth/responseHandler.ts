@@ -62,7 +62,7 @@ const errorResponseHandler = async (error: AxiosError) => {
                         ] = `Bearer ${accessToken}`;
                         resolve(qvickV1Axios(originalRequest));
                     } else {
-                        rejects("orginalRequest is undefined");
+                        rejects("originalRequest is undefined");
                     }
                 });
             });
