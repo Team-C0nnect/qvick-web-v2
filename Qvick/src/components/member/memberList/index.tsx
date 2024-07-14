@@ -40,7 +40,11 @@ const MemberList = () => {
 
     // 멤버 리스트를 엑셀 파일로 내보내는 함수
     const exportToExcel = () => {
-        const dataForExcel = memberList.map(({ stdId, name, room }) => ({ stdId, name, room })); // 필요한 데이터만 추출
+        const dataForExcel = memberList.map(({ stdId, name, room }) => ({
+            "학번": stdId,
+            "이름": name,
+            "기숙사": room
+        })); // 필요한 데이터만 추출
         const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');

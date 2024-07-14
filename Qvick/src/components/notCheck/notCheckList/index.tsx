@@ -54,7 +54,10 @@ const NotCheckList = () => {
     };
 
     const exportToExcel = () => {
-        const dataForExcel = filteredNotCheckList.map(({ stdId, name, room }) => ({ stdId, name, room }));
+        const dataForExcel = filteredNotCheckList.map(({ stdId, name, room }) => ({
+            "학번": stdId,
+            "번호": name,
+            "기숙사": room }));
         const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');

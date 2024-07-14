@@ -91,7 +91,13 @@ const CheckList = () => {
     };
 
     const exportToExcel = () => {
-        const dataForExcel = filteredCheckList.map(({ stdId, name, room, checkedDate, checked }) => ({ stdId, name, room, checkedDate, checked }));
+        const dataForExcel = filteredCheckList.map(({ stdId, name, room, checkedDate, checked }) => ({
+            "학번": stdId,
+            "이름": name,
+            "기숙사": room,
+            "출석시간": checkedDate,
+            "출석여부": checked
+        }));
         const worksheet = XLSX.utils.json_to_sheet(dataForExcel);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Members');
