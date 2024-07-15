@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import home from "src/assets/images/sideBar/home.png";
 import check from "src/assets/images/sideBar/check.png";
 import "src/assets/scss/sideBar/style.scss"
+import React from "react";
 
 export default function SideBar() {
     const navigate = useNavigate();
