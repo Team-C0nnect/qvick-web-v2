@@ -1,20 +1,21 @@
-import React, { useEffect, useState, useMemo } from "react";
-import { MemberType } from "src/types/member/member.type";
-import { qvickV1Axios } from "src/libs/auth/CustomAxios";
-import { AxiosError } from 'axios';
-import * as XLSX from 'xlsx';
-import "src/assets/scss/memberList/style.scss";
+import React, { useEffect, useState, useMemo } from "react"; // React와 관련된 훅들을 가져옴
+import { MemberType } from "src/types/member/member.type"; // 멤버 타입을 정의한 파일을 가져옴
+import { qvickV1Axios } from "src/libs/auth/CustomAxios"; // 커스텀 Axios 인스턴스를 가져옴
+import { AxiosError } from 'axios'; // AxiosError 타입을 가져옴
+import * as XLSX from 'xlsx'; // Excel 파일 작성을 위한 XLSX 라이브러리를 가져옴
+import "src/assets/scss/memberList/style.scss"; // 스타일 시트를 가져옴
 
 const MemberList = () => {
-    const [memberList, setMemberList] = useState<MemberType['data'][]>([]); // 멤버 리스트 상태
-    const [isLoading, setIsLoading] = useState(true); // 로딩 상태
-    const [error, setError] = useState<Error | null>(null); // 에러 상태
+    // 상태 변수들: 멤버 리스트, 로딩 상태, 에러 상태, 검색어 상태를 관리
+    const [memberList, setMemberList] = useState<MemberType['data'][]>([]); // 구성원 목록을 저장하는 상태
+    const [isLoading, setIsLoading] = useState(true); // 데이터 로딩 상태를 관리
+    const [error, setError] = useState<Error | null>(null); // 에러 상태를 관리
     const [searchTerm, setSearchTerm] = useState(''); // 검색어 상태
 
     // 멤버 리스트를 서버에서 가져오는 함수
     const fetchMemberList = async () => {
-        setIsLoading(true);
-        setError(null);
+        setIsLoading(true); // 데이터를 가져오기 시작할 때 로딩 상태를 true로 설정
+        setError(null); // 에러 상태 초기화
         try {
             const response = await qvickV1Axios.get('user-admin/student-all', {
                 params: { page: 1, size: 1000 }, // 페이지와 사이즈 설정
@@ -25,11 +26,11 @@ const MemberList = () => {
             setMemberList(sortedData); // 정렬된 데이터를 상태로 설정
             console.log("성공");
         } catch (error) {
-            const axiosError = error as AxiosError;
+            const axiosError = error as AxiosError; // AxiosError로 타입 단언
             console.error("실패", axiosError);
-            setError(axiosError);
+            setError(axiosError); // 에러 상태 설정
         } finally {
-            setIsLoading(false); // 로딩 상태 해제
+            setIsLoading(false); // 데이터를 가져온 후 로딩 상태를 false로 설정
         }
     };
 
@@ -101,23 +102,22 @@ const Table = ({ data }: { data: MemberType['data'][] }) => (
         </div>
         <table className="table">
             <tbody className="tbody">
-                {Array.isArray(data) && data.length > 0 ? (
-                    data.map((item, index) => (
-                        <tr key={index}>
-                            <td>{item.stdId}</td>
-                            <td>{item.name}</td>
-                            <td>{item.room}호</td>
-                        </tr>
-                    ))
-                ) : (
-                    <tr>
-                        <td colSpan={3}>데이터가 존재하지 않습니다.</td>
+            {Array.isArray(data) && data.length > 0 ? (
+                data.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.stdId}</td>
+                        <td>{item.name}</td>
+                        <td>{item.room}호</td>
                     </tr>
-                )}
+                ))
+            ) : (
+                <tr>
+                    <td colSpan={3}>데이터가 존재하지 않습니다.</td>
+                </tr>
+            )}
             </tbody>
         </table>
     </>
 );
 
 export default MemberList;
-
